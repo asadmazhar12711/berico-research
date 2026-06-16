@@ -15,6 +15,7 @@ const LEADERS = [
     title: "Principal · Investments & Strategic Management",
     initials: "MM",
     photo: "/male3.jpeg",
+    photoPosition: "50% 10%",
     tagline: "30 years of enterprise — from commerce to capital",
     biography: [
       "Manish Mohanlal Mittal is a seasoned businessman with over 30 years of experience spanning manufacturing, trading, and investment management. A Commerce Graduate from the prestigious H.R. College of Commerce and Economics, Mumbai University, he combined rigorous academic training with early hands-on immersion in the traditional family business of cloth manufacturing and trading.",
@@ -34,6 +35,7 @@ const LEADERS = [
     title: "Partner · Business Operations & Family Office",
     initials: "PM",
     photo: "/female1.jpeg",
+    photoPosition: "50% 18%",
     tagline: "Building enterprise, sustaining family — since 1997",
     biography: [
       "Pooja Manish Mittal is an accomplished businesswoman whose entrepreneurial journey began over two decades ago when she co-founded Shail Foods & Packaging Pvt Ltd in Goa. As Founder Promoter and Shareholder, she has been instrumental in building the company from inception into a trusted manufacturer and supplier in the food and bakery sector.",
@@ -53,6 +55,7 @@ const LEADERS = [
     title: "Partner · Design & Creative Strategy",
     initials: "KM",
     photo: "/female2.jpeg",
+    photoPosition: "50% 12%",
     tagline: "Creating spaces that speak — from academy to studio",
     biography: [
       "Kritika Mittal is a graduate of Pearl Academy, New Delhi — one of India's premier institutions for design education — where she developed a refined sensibility for space, material, and human experience. Her formal training laid the foundation for a career characterised by creative rigour and exceptional execution.",
@@ -90,16 +93,17 @@ export default function LeadershipPage() {
                   <div>
                     {/* Avatar */}
                     <div
-                      className="w-32 h-32 rounded-full overflow-hidden border border-[var(--border)] mb-8"
+                      className="w-52 h-52 rounded-full overflow-hidden border-2 border-[var(--border)] mb-8"
                       aria-hidden="true"
                     >
                       {leader.photo ? (
                         <Image
                           src={leader.photo}
                           alt={leader.name}
-                          width={128}
-                          height={128}
-                          className="w-full h-full object-cover object-top"
+                          width={208}
+                          height={208}
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: leader.photoPosition }}
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "var(--surface)" }}>

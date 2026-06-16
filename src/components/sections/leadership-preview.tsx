@@ -10,6 +10,7 @@ const LEADERS = [
     bio: "Commerce Graduate from H.R. College, Mumbai University with 30+ years in business. Founder of Shail Foods & Packaging Pvt Ltd and Harbilas Beriwala Tenets LLP. Expert in operations and strategic financial management.",
     initials: "MM",
     photo: "/male3.jpeg",
+    photoPosition: "50% 10%",
   },
   {
     name: "Pooja Manish Mittal",
@@ -17,6 +18,7 @@ const LEADERS = [
     bio: "Founder Promoter & Shareholder in Shail Foods & Packaging Pvt Ltd since 1997. Partner at Harbilas Beriwala Tenets LLP. Managing family investments and finances across key institutional accounts.",
     initials: "PM",
     photo: "/female1.jpeg",
+    photoPosition: "50% 18%",
   },
   {
     name: "Kritika Mittal",
@@ -24,6 +26,7 @@ const LEADERS = [
     bio: "Interior Designer graduate from Pearl Academy, New Delhi. Led a team of 12 designers at Essentia Environments and completed ultra-luxury projects across Delhi NCR, Mumbai, and Goa. Co-founder of Studio Unnamedd.",
     initials: "KM",
     photo: "/female2.jpeg",
+    photoPosition: "50% 12%",
   },
 ];
 
@@ -69,16 +72,17 @@ export default function LeadershipPreview() {
               <article className="group relative bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-500 p-10 flex flex-col">
                 {/* Avatar */}
                 <div
-                  className="w-20 h-20 rounded-full overflow-hidden mb-8 border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors duration-500 shrink-0"
+                  className="w-36 h-36 rounded-full overflow-hidden mb-8 border-2 border-[var(--border)] group-hover:border-[var(--accent)] transition-colors duration-500 shrink-0"
                   aria-hidden="true"
                 >
                   {leader.photo ? (
                     <Image
                       src={leader.photo}
                       alt={leader.name}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-cover object-top"
+                      width={144}
+                      height={144}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: leader.photoPosition }}
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "var(--background)" }}>

@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="container-content">
           <nav
             aria-label="Main navigation"
-            className="flex items-center justify-between h-20 md:h-24"
+            className="flex items-center justify-between h-24 md:h-28"
           >
             {/* Logo */}
             <Link
@@ -65,9 +65,9 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="BERICO Research"
-                width={140}
-                height={48}
-                className="h-14 md:h-16 w-auto object-contain"
+                width={220}
+                height={80}
+                className="h-16 md:h-20 w-auto object-contain"
                 priority
               />
             </Link>

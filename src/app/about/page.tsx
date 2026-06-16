@@ -15,6 +15,7 @@ const TEAM = [
     title: "Principal · Investments & Strategic Management",
     initials: "MM",
     photo: "/male3.jpeg",
+    photoPosition: "50% 10%",
     sections: [
       {
         heading: "Education & Early Experience",
@@ -35,6 +36,7 @@ const TEAM = [
     title: "Partner · Business Operations & Family Office",
     initials: "PM",
     photo: "/female1.jpeg",
+    photoPosition: "50% 18%",
     sections: [
       {
         heading: "Entrepreneurship & Business",
@@ -55,6 +57,7 @@ const TEAM = [
     title: "Partner · Design & Creative Strategy",
     initials: "KM",
     photo: "/female2.jpeg",
+    photoPosition: "50% 12%",
     sections: [
       {
         heading: "Education & Early Career",
@@ -123,16 +126,17 @@ export default function AboutPage() {
                   {/* Sidebar */}
                   <div className="flex flex-col items-start">
                     <div
-                      className="w-24 h-24 rounded-full overflow-hidden border border-[var(--border)] mb-6"
+                      className="w-44 h-44 rounded-full overflow-hidden border-2 border-[var(--border)] mb-6"
                       aria-hidden="true"
                     >
                       {member.photo ? (
                         <Image
                           src={member.photo}
                           alt={member.name}
-                          width={96}
-                          height={96}
-                          className="w-full h-full object-cover object-top"
+                          width={176}
+                          height={176}
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: member.photoPosition }}
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "var(--surface)" }}>

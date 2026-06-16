@@ -13,8 +13,8 @@
   :root {
     --background: #F5F4EF;
     --surface: #FFFFFF;
-    --text-primary: #111111;
-    --text-secondary: #1A1A1A;
+    --text-primary: #000000;
+    --text-secondary: #000000;
     --accent: #0EA5E9;
     --accent-rgb: 14, 165, 233;
     --border: #E5E5E5;
@@ -136,6 +136,11 @@
 
   .accent-underline:hover::after {
     width: 100%;
+  }
+
+  /* Override font-light to medium weight for readability */
+  .font-light {
+    font-weight: 500 !important;
   }
 
   /* Scrollbar */
