@@ -56,72 +56,74 @@ export default function Navbar() {
         }`}
       >
         <div className="container-content">
-          {/* Desktop: 3-column grid so logo is truly centred */}
+          {/* Desktop: tight split menu — links hug logo */}
           <nav
             aria-label="Main navigation"
-            className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-6 items-center h-24 md:h-28"
+            className="hidden lg:flex items-center justify-center h-24 md:h-28 w-full"
           >
-            {/* Left nav links */}
-            <ul className="flex items-center gap-6 justify-end" role="list">
-              {LEFT_LINKS.map(({ href, label }) => {
-                const isActive = currentPath === href;
-                return (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className={`font-body text-base font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
-                        isActive
-                          ? "bg-[var(--accent)] text-white"
-                          : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
-                      }`}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="flex items-center gap-4 xl:gap-5">
+              {/* Left nav links */}
+              <ul className="flex items-center gap-3 xl:gap-4" role="list">
+                {LEFT_LINKS.map(({ href, label }) => {
+                  const isActive = currentPath === href;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className={`font-body text-base font-medium tracking-wide transition-all duration-200 px-3 py-1.5 whitespace-nowrap ${
+                          isActive
+                            ? "bg-[var(--accent)] text-white"
+                            : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+                        }`}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
 
-            {/* Center: Logo */}
-            <Link href="/" aria-label="BeriCo Research LLP — Home" className="flex flex-col items-center justify-center gap-1">
-              <Image
-                src="/logo.png"
-                alt="BeriCo Research LLP"
-                width={220}
-                height={80}
-                className="h-16 md:h-20 w-auto object-contain"
-                priority
-              />
-              <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[var(--text-secondary)] font-medium whitespace-nowrap">
-                Building Wealth for Generations
-              </span>
-            </Link>
+              {/* Center: Logo */}
+              <Link href="/" aria-label="BeriCo Research LLP — Home" className="flex flex-col items-center justify-center gap-1 shrink-0 px-2">
+                <Image
+                  src="/logo.png"
+                  alt="BeriCo Research LLP"
+                  width={220}
+                  height={80}
+                  className="h-16 md:h-20 w-auto object-contain"
+                  priority
+                />
+                <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[var(--text-secondary)] font-medium whitespace-nowrap">
+                  Building Wealth for Generations
+                </span>
+              </Link>
 
-            {/* Right nav links */}
-            <ul className="flex items-center gap-6 justify-start" role="list">
-              {RIGHT_LINKS.map(({ href, label }) => {
-                const isActive = currentPath === href;
-                return (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className={`font-body text-base font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
-                        isActive
-                          ? "bg-[var(--accent)] text-white"
-                          : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
-                      }`}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                );
-              })}
-              <li className="ml-2">
-                <ThemeToggle />
-              </li>
-            </ul>
+              {/* Right nav links */}
+              <ul className="flex items-center gap-3 xl:gap-4" role="list">
+                {RIGHT_LINKS.map(({ href, label }) => {
+                  const isActive = currentPath === href;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className={`font-body text-base font-medium tracking-wide transition-all duration-200 px-3 py-1.5 whitespace-nowrap ${
+                          isActive
+                            ? "bg-[var(--accent)] text-white"
+                            : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+                        }`}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  );
+                })}
+                <li>
+                  <ThemeToggle />
+                </li>
+              </ul>
+            </div>
           </nav>
 
           {/* Mobile: hamburger | centered logo | theme toggle */}
