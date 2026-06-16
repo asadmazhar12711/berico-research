@@ -38,7 +38,7 @@ export default function ContactForm() {
 
     try {
       const payload = {
-        access_key: "YOUR_WEB3FORMS_KEY", // sign up free at web3forms.com → paste key here
+        access_key: "f850cd19-bbd6-4994-aaef-330f71be5f1d",
         subject: `New enquiry from ${data.get("name")} — BERICO Research LLP`,
         from_name: "BERICO Research LLP Website",
         name: data.get("name"),
