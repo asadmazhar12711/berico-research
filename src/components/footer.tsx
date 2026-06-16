@@ -19,19 +19,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex flex-col items-start mb-4">
-              <div className="relative w-fit">
-                <Image
-                  src="/logo.png"
-                  alt="BERICO Research"
-                  width={160}
-                  height={56}
-                  className="h-14 w-auto object-contain"
-                />
-                <span className="block font-body text-[12px] font-semibold tracking-[0.22em] uppercase mt-0 w-[82%] mx-auto text-center" style={{ color: "#629edd" }}>
-                  Research
-                </span>
-              </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/logo.png"
+                alt="BERICO Research"
+                width={160}
+                height={56}
+                className="h-14 w-auto object-contain"
+              />
             </Link>
             <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed max-w-xs mt-3">
               A private family office focused on long-term value creation, strategic advisory,

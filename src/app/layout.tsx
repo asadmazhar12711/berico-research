@@ -120,7 +120,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
-          storageKey="berico-theme"
+          storageKey="berico-theme-v2"
         >
           <Navbar />
           <main id="main-content">{children}</main>

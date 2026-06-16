@@ -54,27 +54,22 @@ export default function Navbar() {
         <div className="container-content">
           <nav
             aria-label="Main navigation"
-            className="flex items-center justify-between h-16 md:h-20"
+            className="flex items-center justify-between h-20 md:h-24"
           >
             {/* Logo */}
             <Link
               href="/"
-              className="flex flex-col items-center leading-none shrink-0"
+              className="shrink-0"
               aria-label="BERICO Research — Home"
             >
-              <div className="relative w-fit">
-                <Image
-                  src="/logo.png"
-                  alt="BERICO Research"
-                  width={140}
-                  height={48}
-                  className="h-9 md:h-11 w-auto object-contain"
-                  priority
-                />
-                <span className="block font-body text-[11px] font-semibold tracking-[0.22em] uppercase mt-0.5 w-[82%] mx-auto text-center" style={{ color: "#629edd" }}>
-                  Research
-                </span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="BERICO Research"
+                width={140}
+                height={48}
+                className="h-14 md:h-16 w-auto object-contain"
+                priority
+              />
             </Link>
 
             {/* Desktop nav */}
