@@ -83,7 +83,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl mb-12 font-light"
           >
-            A private family office focused on long-term value creation, strategic advisory,
+            A private family office focused on{" "}
+            <em className="font-bold text-[var(--accent)]">long-term value creation</em>,{" "}
+            <em className="font-bold text-[var(--accent)]">strategic advisory</em>,
             and responsible capital stewardship.
           </motion.p>
 
@@ -97,7 +99,7 @@ export default function HeroSection() {
             <Link
               href="/about"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-white font-body text-base font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 group"
-              aria-label="Learn more about BERICO Research LLP"
+              aria-label="Learn more about BeriCo Research LLP"
             >
               Learn More
               <ArrowRight
@@ -109,7 +111,7 @@ export default function HeroSection() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border border-[var(--text-primary)] text-[var(--text-primary)] font-body text-base font-medium tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300"
-              aria-label="Contact BERICO Research LLP"
+              aria-label="Contact BeriCo Research LLP"
             >
               Contact Us
             </Link>

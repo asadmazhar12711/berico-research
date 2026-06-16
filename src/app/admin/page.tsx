@@ -15,7 +15,7 @@ export default function AdminLoginPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && sessionStorage.getItem("berico_admin_auth") === "1") {
+    if (typeof window !== "undefined" && sessionStorage.getItem("BeriCo_admin_auth") === "1") {
       router.replace("/admin/dashboard");
     }
   }, [router]);
@@ -26,7 +26,7 @@ export default function AdminLoginPage() {
     setLoading(true);
     setTimeout(() => {
       if (id.trim() === ADMIN_ID && password === ADMIN_PASSWORD) {
-        sessionStorage.setItem("berico_admin_auth", "1");
+        sessionStorage.setItem("BeriCo_admin_auth", "1");
         router.push("/admin/dashboard");
       } else {
         setError("Invalid credentials. Please try again.");
@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
           <div className="flex justify-center mb-8">
             <Image
               src="/logo.png"
-              alt="BERICO Research LLP"
+              alt="BeriCo Research LLP"
               width={160}
               height={56}
               className="h-14 w-auto object-contain"
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="text-center text-xs text-[#888] mt-6">
-          BERICO Research LLP · Private Admin Access
+          BeriCo Research LLP · Private Admin Access
         </p>
       </div>
     </div>

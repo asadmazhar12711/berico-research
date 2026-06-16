@@ -11,13 +11,13 @@ const TIMELINE_ENTRIES = [
       "Shail Foods & Packaging Pvt Ltd established in Goa — a bread and bakery manufacturing unit, initially under the Modern brand.",
   },
   {
-    year: "2000s",
+    year: "2000's",
     title: "Growth Across Goa",
     description:
       "Expanded distribution throughout Goa markets, supplying leading five-star hotels, Indian Navy Goa, and Indian Army Goa.",
   },
   {
-    year: "2010s",
+    year: "2010's",
     title: "Institutional Supply Network",
     description:
       "Strengthened institutional relationships and supply network. Transitioned to the Melbon brand identity with sustained operations.",
@@ -36,9 +36,9 @@ const TIMELINE_ENTRIES = [
   },
   {
     year: "Present",
-    title: "BERICO Research LLP",
+    title: "BeriCo Research LLP",
     description:
-      "Launch of BERICO Research LLP as the professional face of the family's investment, finance, and consulting activities.",
+      "Launch of BeriCo Research LLP as the professional face of the family's investment, finance, and consulting activities.",
   },
 ];
 

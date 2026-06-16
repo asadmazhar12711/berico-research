@@ -39,8 +39,8 @@ export default function ContactForm() {
     try {
       const payload = {
         access_key: "f850cd19-bbd6-4994-aaef-330f71be5f1d",
-        subject: `New enquiry from ${data.get("name")} — BERICO Research LLP`,
-        from_name: "BERICO Research LLP Website",
+        subject: `New enquiry from ${data.get("name")} — BeriCo Research LLP`,
+        from_name: "BeriCo Research LLP Website",
         name: data.get("name"),
         email: data.get("email"),
         phone: data.get("phone") || "—",
@@ -67,9 +67,9 @@ export default function ContactForm() {
             message: (data.get("message") as string) || "",
             timestamp: new Date().toISOString(),
           };
-          const existing = JSON.parse(localStorage.getItem("berico_leads") || "[]");
+          const existing = JSON.parse(localStorage.getItem("BeriCo_leads") || "[]");
           existing.push(lead);
-          localStorage.setItem("berico_leads", JSON.stringify(existing));
+          localStorage.setItem("BeriCo_leads", JSON.stringify(existing));
         } catch {
           // localStorage unavailable — email backup still works
         }
@@ -235,7 +235,7 @@ export default function ContactForm() {
               type="submit"
               disabled={status === "loading"}
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--accent)] text-white font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 disabled:opacity-60 disabled:cursor-not-allowed group mt-2"
-              aria-label="Send your message to BERICO Research LLP"
+              aria-label="Send your message to BeriCo Research LLP"
             >
               {status === "loading" ? (
                 <>

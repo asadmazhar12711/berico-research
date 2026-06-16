@@ -38,7 +38,7 @@ export default function ContactSection() {
               with our team
             </h2>
             <p className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light">
-              For enquiries, introductions, or further information about BERICO Research LLP,
+              For enquiries, introductions, or further information about BeriCo Research LLP,
               we welcome your correspondence.
             </p>
           </MotionReveal>
@@ -47,7 +47,7 @@ export default function ContactSection() {
             <Link
               href="/contact"
               className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--accent)] text-white font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 group whitespace-nowrap"
-              aria-label="Contact BERICO Research LLP"
+              aria-label="Contact BeriCo Research LLP"
             >
               Contact Us
               <ArrowRight

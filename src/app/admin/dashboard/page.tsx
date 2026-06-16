@@ -32,7 +32,7 @@ function formatDate(iso: string) {
 function getLeads(): Lead[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = localStorage.getItem("berico_leads");
+    const raw = localStorage.getItem("BeriCo_leads");
     return raw ? (JSON.parse(raw) as Lead[]) : [];
   } catch {
     return [];
@@ -55,7 +55,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (sessionStorage.getItem("berico_admin_auth") !== "1") {
+      if (sessionStorage.getItem("BeriCo_admin_auth") !== "1") {
         router.replace("/admin");
         return;
       }
@@ -65,20 +65,20 @@ export default function AdminDashboard() {
   }, [router, load]);
 
   function logout() {
-    sessionStorage.removeItem("berico_admin_auth");
+    sessionStorage.removeItem("BeriCo_admin_auth");
     router.push("/admin");
   }
 
   function deleteLead(id: string) {
     const updated = leads.filter((l) => l.id !== id);
-    localStorage.setItem("berico_leads", JSON.stringify(updated));
+    localStorage.setItem("BeriCo_leads", JSON.stringify(updated));
     setLeads(updated);
     if (selected?.id === id) setSelected(null);
   }
 
   function clearAll() {
     if (confirm("Delete all leads? This cannot be undone.")) {
-      localStorage.removeItem("berico_leads");
+      localStorage.removeItem("BeriCo_leads");
       setLeads([]);
       setSelected(null);
     }
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
         <div className="flex items-center gap-4">
           <Image
             src="/logo.png"
-            alt="BERICO Research LLP"
+            alt="BeriCo Research LLP"
             width={120}
             height={42}
             className="h-10 w-auto object-contain"
@@ -274,7 +274,7 @@ export default function AdminDashboard() {
 
                   <div className="mt-6 flex gap-3">
                     <a
-                      href={`mailto:${selected.email}?subject=Re: ${encodeURIComponent(selected.subject || "Your Enquiry — BERICO Research LLP")}`}
+                      href={`mailto:${selected.email}?subject=Re: ${encodeURIComponent(selected.subject || "Your Enquiry — BeriCo Research LLP")}`}
                       className="flex-1 text-center py-2 rounded-lg bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-sm font-semibold transition-colors"
                     >
                       Reply via Email

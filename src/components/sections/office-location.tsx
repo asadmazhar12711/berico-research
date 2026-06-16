@@ -79,10 +79,10 @@ export default function OfficeLocation() {
                       Email
                     </p>
                     <a
-                      href="mailto:bericoresearch@gmail.com"
+                      href="mailto:BeriCoresearch@gmail.com"
                       className="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
                     >
-                      bericoresearch@gmail.com
+                      BeriCoresearch@gmail.com
                     </a>
                   </div>
                 </div>

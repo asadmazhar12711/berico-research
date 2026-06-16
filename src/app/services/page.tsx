@@ -6,7 +6,7 @@ import { TrendingUp, BarChart2, Briefcase, Building2, Shield, Search } from "luc
 export const metadata: Metadata = {
   title: "Services",
   description:
-      "BERICO Research LLP offers family office management, financial consulting, strategic advisory, business consulting, family office management, and investment stewardship.",
+      "BeriCo Research LLP offers family office management, financial consulting, strategic advisory, business consulting, family office management, and investment stewardship.",
 };
 
 const SERVICES = [
@@ -62,7 +62,7 @@ const SERVICES = [
     icon: Building2,
     title: "Family Office Management",
     description:
-      "BERICO Research LLP provides comprehensive family office management services — coordinating investment activities, financial reporting, compliance oversight, and long-term legacy planning in a structured, professional framework.",
+      "BeriCo Research LLP provides comprehensive family office management services — coordinating investment activities, financial reporting, compliance oversight, and long-term legacy planning in a structured, professional framework.",
     points: [
       "Family office governance and structure",
       "Consolidated financial reporting",
@@ -150,7 +150,7 @@ export default function ServicesPage() {
           <MotionReveal>
             <div className="max-w-2xl mx-auto text-center">
               <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed italic">
-                BERICO Research LLP is a Family Office, Finance &amp; Consulting firm.
+                BeriCo Research LLP is a Family Office, Finance &amp; Consulting firm.
                 We do not advise the general public and do not solicit investments or finance from the public.
                 All services are conducted on a private, family basis.
               </p>

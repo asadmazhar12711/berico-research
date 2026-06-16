@@ -84,10 +84,10 @@ export default function Navbar() {
             </ul>
 
             {/* Center: Logo */}
-            <Link href="/" aria-label="BERICO Research LLP — Home" className="flex justify-center">
+            <Link href="/" aria-label="BeriCo Research LLP — Home" className="flex justify-center">
               <Image
                 src="/logo.png"
-                alt="BERICO Research LLP"
+                alt="BeriCo Research LLP"
                 width={220}
                 height={80}
                 className="h-16 md:h-20 w-auto object-contain"
@@ -133,10 +133,10 @@ export default function Navbar() {
               {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
             </button>
 
-            <Link href="/" aria-label="BERICO Research LLP — Home" className="absolute left-1/2 -translate-x-1/2">
+            <Link href="/" aria-label="BeriCo Research LLP — Home" className="absolute left-1/2 -translate-x-1/2">
               <Image
                 src="/logo.png"
-                alt="BERICO Research LLP"
+                alt="BeriCo Research LLP"
                 width={160}
                 height={60}
                 className="h-14 w-auto object-contain"

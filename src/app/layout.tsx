@@ -20,15 +20,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bericoresearch.co.in"),
+  metadataBase: new URL("https://BeriCoresearch.co.in"),
   title: {
-    default: "BERICO Research LLP | Family Office, Finance & Consulting",
-    template: "%s | BERICO Research LLP",
+    default: "BeriCo Research LLP | Family Office, Finance & Consulting",
+    template: "%s | BeriCo Research LLP",
   },
   description:
-    "BERICO Research LLP is a private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship. Family Office, Finance & Consulting firm based in Gurgaon.",
+    "BeriCo Research LLP is a private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship. Family Office, Finance & Consulting firm based in Gurgaon.",
   keywords: [
-    "BERICO Research LLP",
+    "BeriCo Research LLP",
     "family office",
     "family office",
     "finance consulting",
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     "Gurgaon",
     "Haryana",
   ],
-  authors: [{ name: "BERICO Research LLP" }],
+  authors: [{ name: "BeriCo Research LLP" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://bericoresearch.co.in",
-    siteName: "BERICO Research LLP",
-    title: "BERICO Research LLP | Family Office, Finance & Consulting",
+    url: "https://BeriCoresearch.co.in",
+    siteName: "BeriCo Research LLP",
+    title: "BeriCo Research LLP | Family Office, Finance & Consulting",
     description:
       "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
     images: [
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BERICO Research LLP",
+        alt: "BeriCo Research LLP",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BERICO Research LLP | Family Office, Finance & Consulting",
+    title: "BeriCo Research LLP | Family Office, Finance & Consulting",
     description:
       "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
     images: ["/og-image.png"],
@@ -83,18 +83,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        <link rel="canonical" href="https://bericoresearch.co.in" />
+        <link rel="canonical" href="https://BeriCoresearch.co.in" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "BERICO Research LLP",
+              name: "BeriCo Research LLP",
               description:
                 "A Family Office, Finance & Consulting firm based in Gurgaon, Haryana.",
-              url: "https://bericoresearch.co.in",
-              email: "bericoresearch@gmail.com",
+              url: "https://BeriCoresearch.co.in",
+              email: "BeriCoresearch@gmail.com",
               telephone: "+91-9650510232",
               address: {
                 "@type": "PostalAddress",
@@ -108,7 +108,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+91-9650510232",
                 contactType: "general",
-                email: "bericoresearch@gmail.com",
+                email: "BeriCoresearch@gmail.com",
               },
               sameAs: [],
             }),
@@ -120,7 +120,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
-          storageKey="berico-theme-v2"
+          storageKey="BeriCo-theme-v2"
         >
           <Navbar />
           <main id="main-content">{children}</main>

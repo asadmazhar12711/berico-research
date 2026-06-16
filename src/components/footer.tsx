@@ -22,7 +22,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/logo.png"
-                alt="BERICO Research LLP"
+                alt="BeriCo Research LLP"
                 width={200}
                 height={72}
                 className="h-20 w-auto object-contain"
@@ -83,10 +83,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail size={16} strokeWidth={1.5} className="text-[var(--accent)] shrink-0" />
                 <a
-                  href="mailto:bericoresearch@gmail.com"
+                  href="mailto:BeriCoresearch@gmail.com"
                   className="font-body text-base text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-300 break-all"
                 >
-                  bericoresearch@gmail.com
+                  BeriCoresearch@gmail.com
                 </a>
               </li>
             </ul>
@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-sm text-[var(--text-secondary)]">
-            &copy; {year} BERICO Research LLP. All rights reserved.
+            &copy; {year} BeriCo Research LLP. All rights reserved.
           </p>
           <p className="font-body text-sm text-[var(--text-secondary)]">
             Family Office · Finance · Consulting

@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact BERICO Research LLP — a family office, finance and consulting firm in Gurgaon. Reach us by phone, email, or visit our office at VentureX, Sector-67.",
+    "Contact BeriCo Research LLP — a family office, finance and consulting firm in Gurgaon. Reach us by phone, email, or visit our office at VentureX, Sector-67.",
 };
 
 const CONTACT_ITEMS = [
@@ -20,8 +20,8 @@ const CONTACT_ITEMS = [
   {
     icon: Mail,
     label: "Email",
-    value: "bericoresearch@gmail.com",
-    href: "mailto:bericoresearch@gmail.com",
+    value: "BeriCoresearch@gmail.com",
+    href: "mailto:BeriCoresearch@gmail.com",
   },
   {
     icon: MapPin,
@@ -43,7 +43,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Begin a conversation"
-        subtitle="We welcome correspondence from those interested in learning more about BERICO Research LLP."
+        subtitle="We welcome correspondence from those interested in learning more about BeriCo Research LLP."
       />
 
       <section aria-labelledby="contact-details" className="section-padding bg-[var(--background)]">

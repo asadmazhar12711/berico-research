@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import PageHero from "@/components/page-hero";
@@ -6,10 +7,10 @@ import PageHero from "@/components/page-hero";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about BERICO Research LLP — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
+    "Learn about BeriCo Research LLP — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
 };
 
-const TEAM = [
+const TEAM: { name: string; title: string; initials: string; photo: string; photoPosition: string; sections: { heading: string; body: ReactNode }[] }[] = [
   {
     name: "Manish Mohanlal Mittal",
     title: "Principal · Investments & Strategic Management",
@@ -27,7 +28,7 @@ const TEAM = [
       },
       {
         heading: "Strategic Leadership",
-        body: "With over 30 years of business experience spanning manufacturing, trading, and investment management, Manish brings deep operational knowledge and strategic financial insight to BERICO Research LLP. His long-term perspective informs the family's capital allocation and advisory philosophy.",
+        body: <>With <em className="font-bold text-[var(--accent)]">over 30 years of business experience</em> spanning manufacturing, trading, and investment management, Manish brings <em className="font-bold text-[var(--accent)]">deep operational knowledge and strategic financial insight</em> to BeriCo Research LLP. His long-term perspective informs the family&apos;s capital allocation and advisory philosophy.</>,
       },
     ],
   },
@@ -44,7 +45,7 @@ const TEAM = [
       },
       {
         heading: "Shail Foods & Packaging",
-        body: "Under Pooja's stewardship, Shail Foods has grown from a local bread and bakery manufacturer — erstwhile operating under the Modern brand, now the Melbon brand — to supply products across Goa markets, leading five-star hotels, and as a dedicated supplier to the Indian Navy Goa and Indian Army Goa.",
+        body: <>Under Pooja&apos;s stewardship, Shail Foods has grown from a local bread and bakery manufacturer — now the Melbon brand — to supply products across Goa markets, <em className="font-bold text-[var(--accent)]">leading five-star hotels</em>, and as a <em className="font-bold text-[var(--accent)]">dedicated supplier to the Indian Navy Goa and Indian Army Goa</em>.</>,
       },
       {
         heading: "Family Office",
@@ -65,7 +66,7 @@ const TEAM = [
       },
       {
         heading: "Professional Growth",
-        body: "Promoted to lead a team of 12 designers as Senior Executive Designer, Kritika worked on a portfolio of ultra-luxury residential and commercial projects. Her work is defined by meticulous attention to detail, spatial intelligence, and a commitment to client-centric design.",
+        body: <>Promoted to lead a <em className="font-bold text-[var(--accent)]">team of 12 designers</em> as Senior Executive Designer, Kritika worked on a portfolio of <em className="font-bold text-[var(--accent)]">ultra-luxury residential and commercial projects</em>. Her work is defined by <em className="font-bold text-[var(--accent)]">meticulous attention to detail, spatial intelligence</em>, and a commitment to client-centric design.</>,
       },
       {
         heading: "Studio Unnamedd",
@@ -85,7 +86,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="A family built on enterprise, integrity & long-term thinking"
-        subtitle="BERICO Research LLP is the investment, finance, and consulting arm of a family with deep roots in Indian business and industry."
+        subtitle="BeriCo Research LLP is the investment, finance, and consulting arm of a family with deep roots in Indian business and industry."
       />
 
       {/* Family intro */}
@@ -95,10 +96,12 @@ export default function AboutPage() {
             <MotionReveal>
               <div className="divider mx-auto mb-8" />
               <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                Founded by the Mittal family, BERICO Research LLP draws on decades of entrepreneurial
-                experience in food manufacturing, business operations, and strategic financial management.
-                Our approach is grounded in the belief that prudent stewardship, disciplined investing,
-                and thoughtful advisory create enduring value across generations.
+                Founded by the Mittal family, BeriCo Research LLP draws on{" "}
+                <em className="font-bold text-[var(--accent)]">decades of entrepreneurial experience</em>
+                {" "}in food manufacturing, business operations, and strategic financial management.
+                Our approach is grounded in the belief that{" "}
+                <em className="font-bold text-[var(--accent)]">prudent stewardship, disciplined investing, and thoughtful advisory</em>
+                {" "}create enduring value across generations.
               </p>
             </MotionReveal>
           </div>
@@ -119,7 +122,7 @@ export default function AboutPage() {
               id="team-heading"
               className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)]"
             >
-              The people of BERICO Research LLP
+              The people of BeriCo Research LLP
             </h2>
           </MotionReveal>
 
