@@ -56,6 +56,23 @@ export default function ContactForm() {
 
       const json = await res.json();
       if (json.success) {
+        // Save lead to localStorage for admin panel
+        try {
+          const lead = {
+            id: `lead_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+            name: (data.get("name") as string) || "",
+            email: (data.get("email") as string) || "",
+            phone: (data.get("phone") as string) || "",
+            subject: (data.get("subject") as string) || "",
+            message: (data.get("message") as string) || "",
+            timestamp: new Date().toISOString(),
+          };
+          const existing = JSON.parse(localStorage.getItem("berico_leads") || "[]");
+          existing.push(lead);
+          localStorage.setItem("berico_leads", JSON.stringify(existing));
+        } catch {
+          // localStorage unavailable — email backup still works
+        }
         setStatus("success");
         form.reset();
       } else {
