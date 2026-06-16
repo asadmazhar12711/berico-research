@@ -59,10 +59,10 @@ export default function Navbar() {
           {/* Desktop: 3-column grid so logo is truly centred */}
           <nav
             aria-label="Main navigation"
-            className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-24 md:h-28"
+            className="hidden lg:grid grid-cols-[1fr_auto_1fr] gap-6 items-center h-24 md:h-28"
           >
             {/* Left nav links */}
-            <ul className="flex items-center gap-1 justify-end" role="list">
+            <ul className="flex items-center gap-6 justify-end" role="list">
               {LEFT_LINKS.map(({ href, label }) => {
                 const isActive = currentPath === href;
                 return (
@@ -84,7 +84,7 @@ export default function Navbar() {
             </ul>
 
             {/* Center: Logo */}
-            <Link href="/" aria-label="BERICO Research — Home" className="flex justify-center px-4">
+            <Link href="/" aria-label="BERICO Research — Home" className="flex justify-center">
               <Image
                 src="/logo.png"
                 alt="BERICO Research"
@@ -96,7 +96,7 @@ export default function Navbar() {
             </Link>
 
             {/* Right nav links */}
-            <ul className="flex items-center gap-1 justify-start" role="list">
+            <ul className="flex items-center gap-6 justify-start" role="list">
               {RIGHT_LINKS.map(({ href, label }) => {
                 const isActive = currentPath === href;
                 return (

@@ -36,10 +36,34 @@ export default function ContactForm() {
     setErrors({});
     setStatus("loading");
 
-    // Simulate submission (replace with real endpoint)
-    await new Promise((res) => setTimeout(res, 1500));
-    setStatus("success");
-    form.reset();
+    try {
+      const payload = {
+        access_key: "YOUR_WEB3FORMS_KEY", // sign up free at web3forms.com → paste key here
+        subject: `New enquiry from ${data.get("name")} — BERICO Research`,
+        from_name: "BERICO Research Website",
+        name: data.get("name"),
+        email: data.get("email"),
+        phone: data.get("phone") || "—",
+        enquiry_subject: data.get("subject") || "—",
+        message: data.get("message"),
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const json = await res.json();
+      if (json.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputClass = (field: string) =>
