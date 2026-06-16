@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -58,15 +59,22 @@ export default function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex flex-col leading-none group"
-              aria-label="BeriCo Research — Home"
+              className="flex flex-col items-center leading-none shrink-0"
+              aria-label="BERICO Research — Home"
             >
-              <span className="font-heading text-lg md:text-xl font-semibold tracking-wide text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-300">
-                BeriCo Research
-              </span>
-              <span className="text-[10px] font-body font-light tracking-[0.2em] uppercase text-[var(--text-secondary)] mt-0.5">
-                Family Office
-              </span>
+              <div className="relative w-fit">
+                <Image
+                  src="/logo.png"
+                  alt="BERICO Research"
+                  width={140}
+                  height={48}
+                  className="h-9 md:h-11 w-auto object-contain"
+                  priority
+                />
+                <span className="block font-body text-[11px] font-semibold tracking-[0.22em] uppercase mt-0.5 w-[82%] mx-auto text-center" style={{ color: "#629edd" }}>
+                  Research
+                </span>
+              </div>
             </Link>
 
             {/* Desktop nav */}

@@ -1,30 +1,32 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about BeriCo Research — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
+    "Learn about BERICO Research — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
 };
 
 const TEAM = [
   {
-    name: "Kritika Mittal",
-    title: "Partner · Design & Creative Strategy",
-    initials: "KM",
+    name: "Manish Mohanlal Mittal",
+    title: "Principal · Investments & Strategic Management",
+    initials: "MM",
+    photo: "/male3.jpeg",
     sections: [
       {
-        heading: "Education & Early Career",
-        body: "Kritika Mittal is an Interior Design graduate from Pearl Academy, New Delhi — one of India's foremost design institutions. She began her professional journey as an intern with Essentia Environments, Gurgaon, where her talent and dedication were quickly recognised.",
+        heading: "Education & Early Experience",
+        body: "Manish Mohanlal Mittal is a Commerce Graduate from the prestigious H.R. College of Commerce and Economics, Mumbai University. During his formative years, he was actively involved in the traditional family business of cloth manufacturing and trading, gaining foundational experience in commerce and operations.",
       },
       {
-        heading: "Professional Growth",
-        body: "Promoted to lead a team of 12 designers as Senior Executive Designer, Kritika worked on a portfolio of ultra-luxury residential and commercial projects. Her work is defined by meticulous attention to detail, spatial intelligence, and a commitment to client-centric design.",
+        heading: "Shail Foods & Harbilas Beriwala Tenets LLP",
+        body: "Manish founded Shail Foods & Packaging Pvt Ltd in Goa — a bread and bakery unit initially under the Modern franchise, now operating under the proprietary Melbon brand. The company supplies Goa markets, five-star hotels, and defence institutions. He also founded Harbilas Beriwala Tenets LLP to manage family investments and stock market activities.",
       },
       {
-        heading: "Studio Unnamedd",
-        body: "Kritika co-founded Studio Unnamedd with her husband Mr Rahul Nanda, with whom she shares a long-standing creative and professional bond. The studio has completed numerous projects across Delhi NCR, Mumbai, and Goa, with several ongoing commissions in New Delhi, Gurgaon, Mumbai, and Goa.",
+        heading: "Strategic Leadership",
+        body: "With over 30 years of business experience spanning manufacturing, trading, and investment management, Manish brings deep operational knowledge and strategic financial insight to BERICO Research. His long-term perspective informs the family's capital allocation and advisory philosophy.",
       },
     ],
   },
@@ -32,6 +34,7 @@ const TEAM = [
     name: "Pooja Manish Mittal",
     title: "Partner · Business Operations & Family Office",
     initials: "PM",
+    photo: "/female1.jpeg",
     sections: [
       {
         heading: "Entrepreneurship & Business",
@@ -48,21 +51,22 @@ const TEAM = [
     ],
   },
   {
-    name: "Manish Mohanlal Mittal",
-    title: "Principal · Investments & Strategic Management",
-    initials: "MM",
+    name: "Kritika Mittal",
+    title: "Partner · Design & Creative Strategy",
+    initials: "KM",
+    photo: "/female2.jpeg",
     sections: [
       {
-        heading: "Education & Early Experience",
-        body: "Manish Mohanlal Mittal is a Commerce Graduate from the prestigious H.R. College of Commerce and Economics, Mumbai University. During his formative years, he was actively involved in the traditional family business of cloth manufacturing and trading, gaining foundational experience in commerce and operations.",
+        heading: "Education & Early Career",
+        body: "Kritika Mittal is an Interior Design graduate from Pearl Academy, New Delhi — one of India's foremost design institutions. She began her professional journey as an intern with Essentia Environments, Gurgaon, where her talent and dedication were quickly recognised.",
       },
       {
-        heading: "Shail Foods & Harbilas Beriwala Tenets LLP",
-        body: "Manish founded Shail Foods & Packaging Pvt Ltd in Goa — a bread and bakery unit initially under the Modern franchise, now operating under the proprietary Melbon brand. The company supplies Goa markets, five-star hotels, and defence institutions. He also founded Harbilas Beriwala Tenets LLP to manage family investments and stock market activities.",
+        heading: "Professional Growth",
+        body: "Promoted to lead a team of 12 designers as Senior Executive Designer, Kritika worked on a portfolio of ultra-luxury residential and commercial projects. Her work is defined by meticulous attention to detail, spatial intelligence, and a commitment to client-centric design.",
       },
       {
-        heading: "Strategic Leadership",
-        body: "With over 30 years of business experience spanning manufacturing, trading, and investment management, Manish brings deep operational knowledge and strategic financial insight to BeriCo Research. His long-term perspective informs the family's capital allocation and advisory philosophy.",
+        heading: "Studio Unnamedd",
+        body: "Kritika co-founded Studio Unnamedd with her husband Mr Rahul Nanda, with whom she shares a long-standing creative and professional bond. The studio has completed numerous projects across Delhi NCR, Mumbai, and Goa, with several ongoing commissions in New Delhi, Gurgaon, Mumbai, and Goa.",
       },
     ],
   },
@@ -74,7 +78,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="A family built on enterprise, integrity & long-term thinking"
-        subtitle="BeriCo Research is the investment, finance, and consulting arm of a family with deep roots in Indian business and industry."
+        subtitle="BERICO Research is the investment, finance, and consulting arm of a family with deep roots in Indian business and industry."
       />
 
       {/* Family intro */}
@@ -84,8 +88,8 @@ export default function AboutPage() {
             <MotionReveal>
               <div className="divider mx-auto mb-8" />
               <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                Founded by the Mittal family, BeriCo Research draws on decades of entrepreneurial
-                experience in food manufacturing, real estate consulting, and strategic financial management.
+                Founded by the Mittal family, BERICO Research draws on decades of entrepreneurial
+                experience in food manufacturing, business operations, and strategic financial management.
                 Our approach is grounded in the belief that prudent stewardship, disciplined investing,
                 and thoughtful advisory create enduring value across generations.
               </p>
@@ -108,7 +112,7 @@ export default function AboutPage() {
               id="team-heading"
               className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)]"
             >
-              The people of BeriCo Research
+              The people of BERICO Research
             </h2>
           </MotionReveal>
 
@@ -119,13 +123,24 @@ export default function AboutPage() {
                   {/* Sidebar */}
                   <div className="flex flex-col items-start">
                     <div
-                      className="w-24 h-24 rounded-full border border-[var(--border)] flex items-center justify-center mb-6"
-                      style={{ backgroundColor: "var(--surface)" }}
+                      className="w-24 h-24 rounded-full overflow-hidden border border-[var(--border)] mb-6"
                       aria-hidden="true"
                     >
-                      <span className="font-heading text-2xl font-semibold text-[var(--accent)]">
-                        {member.initials}
-                      </span>
+                      {member.photo ? (
+                        <Image
+                          src={member.photo}
+                          alt={member.name}
+                          width={96}
+                          height={96}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "var(--surface)" }}>
+                          <span className="font-heading text-2xl font-semibold text-[var(--accent)]">
+                            {member.initials}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <h3 className="font-heading text-2xl font-semibold text-[var(--text-primary)] mb-2">
                       {member.name}

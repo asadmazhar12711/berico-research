@@ -194,7 +194,7 @@ export default function ContactForm() {
               type="submit"
               disabled={status === "loading"}
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--accent)] text-white font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 disabled:opacity-60 disabled:cursor-not-allowed group mt-2"
-              aria-label="Send your message to BeriCo Research"
+              aria-label="Send your message to BERICO Research"
             >
               {status === "loading" ? (
                 <>

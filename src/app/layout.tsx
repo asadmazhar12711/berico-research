@@ -22,13 +22,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bericoresearch.co.in"),
   title: {
-    default: "BeriCo Research | Family Investment, Finance & Consulting",
-    template: "%s | BeriCo Research",
+    default: "BERICO Research | Family Investment, Finance & Consulting",
+    template: "%s | BERICO Research",
   },
   description:
-    "BeriCo Research is a private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship. Family Investment, Finance & Consulting firm based in Gurgaon.",
+    "BERICO Research is a private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship. Family Investment, Finance & Consulting firm based in Gurgaon.",
   keywords: [
-    "BeriCo Research",
+    "BERICO Research",
     "family investment",
     "family office",
     "finance consulting",
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     "Gurgaon",
     "Haryana",
   ],
-  authors: [{ name: "BeriCo Research" }],
+  authors: [{ name: "BERICO Research" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://bericoresearch.co.in",
-    siteName: "BeriCo Research",
-    title: "BeriCo Research | Family Investment, Finance & Consulting",
+    siteName: "BERICO Research",
+    title: "BERICO Research | Family Investment, Finance & Consulting",
     description:
       "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
     images: [
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BeriCo Research",
+        alt: "BERICO Research",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BeriCo Research | Family Investment, Finance & Consulting",
+    title: "BERICO Research | Family Investment, Finance & Consulting",
     description:
       "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
     images: ["/og-image.png"],
@@ -90,7 +90,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "BeriCo Research",
+              name: "BERICO Research",
               description:
                 "A Family Investment, Finance & Consulting firm based in Gurgaon, Haryana.",
               url: "https://bericoresearch.co.in",

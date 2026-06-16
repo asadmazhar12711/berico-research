@@ -11,12 +11,12 @@
 
 @layer base {
   :root {
-    --background: #F8F7F4;
+    --background: #F5F4EF;
     --surface: #FFFFFF;
     --text-primary: #111111;
-    --text-secondary: #5A5A5A;
-    --accent: #9A7B4F;
-    --accent-rgb: 154, 123, 79;
+    --text-secondary: #1A1A1A;
+    --accent: #0EA5E9;
+    --accent-rgb: 14, 165, 233;
     --border: #E5E5E5;
   }
 
@@ -24,9 +24,9 @@
     --background: #0E0E0E;
     --surface: #171717;
     --text-primary: #FAFAFA;
-    --text-secondary: #C8C8C8;
-    --accent: #C8A977;
-    --accent-rgb: 200, 169, 119;
+    --text-secondary: #D4D4D4;
+    --accent: #38BDF8;
+    --accent-rgb: 56, 189, 248;
     --border: #2A2A2A;
   }
 

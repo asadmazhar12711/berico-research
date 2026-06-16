@@ -1,36 +1,39 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "Meet the leadership of BeriCo Research — Kritika Mittal, Pooja Manish Mittal, and Manish Mohanlal Mittal — the family behind the firm.",
+    "Meet the leadership of BERICO Research — Manish Mohanlal Mittal, Pooja Manish Mittal, and Kritika Mittal — the family behind the firm.",
 };
 
 const LEADERS = [
   {
-    name: "Kritika Mittal",
-    title: "Partner · Design & Creative Strategy",
-    initials: "KM",
-    tagline: "Creating spaces that speak — from academy to studio",
+    name: "Manish Mohanlal Mittal",
+    title: "Principal · Investments & Strategic Management",
+    initials: "MM",
+    photo: "/male3.jpeg",
+    tagline: "30 years of enterprise — from commerce to capital",
     biography: [
-      "Kritika Mittal is a graduate of Pearl Academy, New Delhi — one of India's premier institutions for design education — where she developed a refined sensibility for space, material, and human experience. Her formal training laid the foundation for a career characterised by creative rigour and exceptional execution.",
-      "She began her professional journey at Essentia Environments, Gurgaon, where she quickly advanced from intern to Senior Executive Designer, leading a team of 12 designers across a portfolio of ultra-luxury residential and commercial projects. Her work earned recognition for its thoughtful spatial planning, bespoke material specification, and meticulous project delivery.",
-      "Driven by entrepreneurial ambition, Kritika co-founded Studio Unnamedd alongside her husband, Mr Rahul Nanda — a creative collaboration forged during their years at Pearl Academy. The studio has since completed numerous high-end projects across Delhi NCR, Mumbai, and Goa, with multiple ongoing commissions across these markets.",
+      "Manish Mohanlal Mittal is a seasoned businessman with over 30 years of experience spanning manufacturing, trading, and investment management. A Commerce Graduate from the prestigious H.R. College of Commerce and Economics, Mumbai University, he combined rigorous academic training with early hands-on immersion in the traditional family business of cloth manufacturing and trading.",
+      "In 1997, Manish founded Shail Foods & Packaging Pvt Ltd in Goa — establishing a bread and bakery manufacturing unit initially under the Modern franchise, now operating under the Melbon brand. Over the years, the company has grown into a dependable supplier to institutional customers including leading five-star hotels and defence establishments. Manish's operational acumen and business relationships have been central to the company's longevity and reputation.",
+      "Recognising the importance of structured investment management, Manish also founded Harbilas Beriwala Tenets LLP — a family office vehicle through which the family manages its stock market investments and financial affairs. His philosophy is rooted in long-term value creation, disciplined capital allocation, and the preservation of family wealth across generations.",
     ],
     achievements: [
-      "Interior Design Graduate, Pearl Academy, New Delhi",
-      "Senior Executive Designer, Essentia Environments — Team lead of 12",
-      "Ultra-luxury residential and commercial project portfolio",
-      "Co-founder, Studio Unnamedd",
-      "Active project presence across Delhi NCR, Mumbai & Goa",
+      "Commerce Graduate, H.R. College of Commerce & Economics, Mumbai University",
+      "Founder, Shail Foods & Packaging Pvt Ltd (est. 1997)",
+      "Founder, Harbilas Beriwala Tenets LLP",
+      "30+ years in business operations and strategic management",
+      "Active investor in stock markets and family capital allocation",
     ],
   },
   {
     name: "Pooja Manish Mittal",
     title: "Partner · Business Operations & Family Office",
     initials: "PM",
+    photo: "/female1.jpeg",
     tagline: "Building enterprise, sustaining family — since 1997",
     biography: [
       "Pooja Manish Mittal is an accomplished businesswoman whose entrepreneurial journey began over two decades ago when she co-founded Shail Foods & Packaging Pvt Ltd in Goa. As Founder Promoter and Shareholder, she has been instrumental in building the company from inception into a trusted manufacturer and supplier in the food and bakery sector.",
@@ -46,21 +49,22 @@ const LEADERS = [
     ],
   },
   {
-    name: "Manish Mohanlal Mittal",
-    title: "Principal · Investments & Strategic Management",
-    initials: "MM",
-    tagline: "30 years of enterprise — from commerce to capital",
+    name: "Kritika Mittal",
+    title: "Partner · Design & Creative Strategy",
+    initials: "KM",
+    photo: "/female2.jpeg",
+    tagline: "Creating spaces that speak — from academy to studio",
     biography: [
-      "Manish Mohanlal Mittal is a seasoned businessman with over 30 years of experience spanning manufacturing, trading, and investment management. A Commerce Graduate from the prestigious H.R. College of Commerce and Economics, Mumbai University, he combined rigorous academic training with early hands-on immersion in the traditional family business of cloth manufacturing and trading.",
-      "In 1997, Manish founded Shail Foods & Packaging Pvt Ltd in Goa — establishing a bread and bakery manufacturing unit initially under the Modern franchise, now operating under the Melbon brand. Over the years, the company has grown into a dependable supplier to institutional customers including leading five-star hotels and defence establishments. Manish's operational acumen and business relationships have been central to the company's longevity and reputation.",
-      "Recognising the importance of structured investment management, Manish also founded Harbilas Beriwala Tenets LLP — a family office vehicle through which the family manages its stock market investments and financial affairs. His philosophy is rooted in long-term value creation, disciplined capital allocation, and the preservation of family wealth across generations.",
+      "Kritika Mittal is a graduate of Pearl Academy, New Delhi — one of India's premier institutions for design education — where she developed a refined sensibility for space, material, and human experience. Her formal training laid the foundation for a career characterised by creative rigour and exceptional execution.",
+      "She began her professional journey at Essentia Environments, Gurgaon, where she quickly advanced from intern to Senior Executive Designer, leading a team of 12 designers across a portfolio of ultra-luxury residential and commercial projects. Her work earned recognition for its thoughtful spatial planning, bespoke material specification, and meticulous project delivery.",
+      "Driven by entrepreneurial ambition, Kritika co-founded Studio Unnamedd alongside her husband, Mr Rahul Nanda — a creative collaboration forged during their years at Pearl Academy. The studio has since completed numerous high-end projects across Delhi NCR, Mumbai, and Goa, with multiple ongoing commissions across these markets.",
     ],
     achievements: [
-      "Commerce Graduate, H.R. College of Commerce & Economics, Mumbai University",
-      "Founder, Shail Foods & Packaging Pvt Ltd (est. 1997)",
-      "Founder, Harbilas Beriwala Tenets LLP",
-      "30+ years in business operations and strategic management",
-      "Active investor in stock markets and family capital allocation",
+      "Interior Design Graduate, Pearl Academy, New Delhi",
+      "Senior Executive Designer, Essentia Environments — Team lead of 12",
+      "Ultra-luxury residential and commercial project portfolio",
+      "Co-founder, Studio Unnamedd",
+      "Active project presence across Delhi NCR, Mumbai & Goa",
     ],
   },
 ];
@@ -70,7 +74,7 @@ export default function LeadershipPage() {
     <>
       <PageHero
         eyebrow="Leadership"
-        title="The family behind BeriCo Research"
+        title="The family behind BERICO Research"
         subtitle="Three principals. Decades of combined experience. A shared commitment to building lasting value."
       />
 
@@ -86,13 +90,24 @@ export default function LeadershipPage() {
                   <div>
                     {/* Avatar */}
                     <div
-                      className="w-32 h-32 rounded-full border border-[var(--border)] flex items-center justify-center mb-8"
-                      style={{ backgroundColor: "var(--surface)" }}
+                      className="w-32 h-32 rounded-full overflow-hidden border border-[var(--border)] mb-8"
                       aria-hidden="true"
                     >
-                      <span className="font-heading text-3xl font-semibold text-[var(--accent)]">
-                        {leader.initials}
-                      </span>
+                      {leader.photo ? (
+                        <Image
+                          src={leader.photo}
+                          alt={leader.name}
+                          width={128}
+                          height={128}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "var(--surface)" }}>
+                          <span className="font-heading text-3xl font-semibold text-[var(--accent)]">
+                            {leader.initials}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Name */}

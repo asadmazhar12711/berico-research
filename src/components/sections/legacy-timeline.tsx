@@ -36,9 +36,9 @@ const TIMELINE_ENTRIES = [
   },
   {
     year: "Present",
-    title: "BeriCo Research",
+    title: "BERICO Research",
     description:
-      "Launch of BeriCo Research as the professional face of the family's investment, finance, and consulting activities.",
+      "Launch of BERICO Research as the professional face of the family's investment, finance, and consulting activities.",
   },
 ];
 

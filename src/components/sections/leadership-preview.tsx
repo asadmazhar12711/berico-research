@@ -1,25 +1,29 @@
 import Link from "next/link";
+import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import { ArrowRight } from "lucide-react";
 
 const LEADERS = [
   {
-    name: "Kritika Mittal",
-    title: "Partner · Design & Creative Strategy",
-    bio: "Interior Designer graduate from Pearl Academy, New Delhi. Led a team of 12 designers at Essentia Environments and completed ultra-luxury projects across Delhi NCR, Mumbai, and Goa. Co-founder of Studio Unnamedd.",
-    initials: "KM",
+    name: "Manish Mohanlal Mittal",
+    title: "Principal · Investments & Strategic Management",
+    bio: "Commerce Graduate from H.R. College, Mumbai University with 30+ years in business. Founder of Shail Foods & Packaging Pvt Ltd and Harbilas Beriwala Tenets LLP. Expert in operations and strategic financial management.",
+    initials: "MM",
+    photo: "/male3.jpeg",
   },
   {
     name: "Pooja Manish Mittal",
     title: "Partner · Business Operations & Family Office",
     bio: "Founder Promoter & Shareholder in Shail Foods & Packaging Pvt Ltd since 1997. Partner at Harbilas Beriwala Tenets LLP. Managing family investments and finances across key institutional accounts.",
     initials: "PM",
+    photo: "/female1.jpeg",
   },
   {
-    name: "Manish Mohanlal Mittal",
-    title: "Principal · Investments & Strategic Management",
-    bio: "Commerce Graduate from H.R. College, Mumbai University with 30+ years in business. Founder of Shail Foods & Packaging Pvt Ltd and Harbilas Beriwala Tenets LLP. Expert in operations and strategic financial management.",
-    initials: "MM",
+    name: "Kritika Mittal",
+    title: "Partner · Design & Creative Strategy",
+    bio: "Interior Designer graduate from Pearl Academy, New Delhi. Led a team of 12 designers at Essentia Environments and completed ultra-luxury projects across Delhi NCR, Mumbai, and Goa. Co-founder of Studio Unnamedd.",
+    initials: "KM",
+    photo: "/female2.jpeg",
   },
 ];
 
@@ -45,7 +49,7 @@ export default function LeadershipPreview() {
             >
               The people behind
               <br />
-              BeriCo Research
+              BERICO Research
             </h2>
           </div>
           <Link
@@ -65,13 +69,24 @@ export default function LeadershipPreview() {
               <article className="group relative bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-500 p-10 flex flex-col">
                 {/* Avatar */}
                 <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mb-8 border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors duration-500"
-                  style={{ backgroundColor: "var(--background)" }}
+                  className="w-20 h-20 rounded-full overflow-hidden mb-8 border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors duration-500 shrink-0"
                   aria-hidden="true"
                 >
-                  <span className="font-heading text-xl font-semibold text-[var(--accent)]">
-                    {leader.initials}
-                  </span>
+                  {leader.photo ? (
+                    <Image
+                      src={leader.photo}
+                      alt={leader.name}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: "var(--background)" }}>
+                      <span className="font-heading text-xl font-semibold text-[var(--accent)]">
+                        {leader.initials}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Name & title */}
