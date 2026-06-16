@@ -10,7 +10,7 @@ const LEADERS = [
     bio: "Commerce Graduate from H.R. College, Mumbai University with 30+ years in business. Founder of Shail Foods & Packaging Pvt Ltd and Harbilas Beriwala Tenets LLP. Expert in operations and strategic financial management.",
     initials: "MM",
     photo: "/male.jpeg",
-    photoPosition: "50% 50%",
+    photoPosition: "50% 20%",
   },
   {
     name: "Pooja Manish Mittal",
@@ -18,7 +18,7 @@ const LEADERS = [
     bio: "Founder Promoter & Shareholder in Shail Foods & Packaging Pvt Ltd since 1997. Partner at Harbilas Beriwala Tenets LLP. Managing family investments and finances across key institutional accounts.",
     initials: "PM",
     photo: "/female1.jpeg",
-    photoPosition: "50% 50%",
+    photoPosition: "50% 20%",
   },
   {
     name: "Kritika Mittal",
@@ -26,7 +26,7 @@ const LEADERS = [
     bio: "Interior Designer graduate from Pearl Academy, New Delhi. Led a team of 12 designers at Essentia Environments and completed ultra-luxury projects across Delhi NCR, Mumbai, and Goa. Co-founder of Studio Unnamedd.",
     initials: "KM",
     photo: "/female2.jpeg",
-    photoPosition: "50% 50%",
+    photoPosition: "50% 20%",
   },
 ];
 

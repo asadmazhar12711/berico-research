@@ -42,6 +42,9 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  // normalise pathname — trailingSlash:true adds "/" so strip it
+  const currentPath = pathname.replace(/\/$/, "") || "/";
+
   return (
     <>
       <header
@@ -53,16 +56,15 @@ export default function Navbar() {
         }`}
       >
         <div className="container-content">
+          {/* Desktop: 3-column grid so logo is truly centred */}
           <nav
             aria-label="Main navigation"
-            className="flex items-center h-24 md:h-28"
+            className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-24 md:h-28"
           >
-            {/* ── Desktop: split layout ── */}
-
             {/* Left nav links */}
-            <ul className="hidden lg:flex items-center gap-1 flex-1" role="list">
+            <ul className="flex items-center gap-1" role="list">
               {LEFT_LINKS.map(({ href, label }) => {
-                const isActive = pathname === href;
+                const isActive = currentPath === href;
                 return (
                   <li key={href}>
                     <Link
@@ -81,45 +83,22 @@ export default function Navbar() {
               })}
             </ul>
 
-            {/* Center: Logo (desktop) + mobile full row */}
-            <div className="flex items-center justify-between w-full lg:w-auto lg:justify-center lg:px-6">
-              {/* Mobile: hamburger on left */}
-              <button
-                onClick={() => setMobileOpen((o) => !o)}
-                aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                aria-expanded={mobileOpen}
-                aria-controls="mobile-menu"
-                className="lg:hidden w-10 h-10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
-              >
-                {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
-              </button>
-
-              {/* Logo — centered on mobile, centered in split on desktop */}
-              <Link
-                href="/"
-                aria-label="BERICO Research — Home"
-                className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0"
-              >
-                <Image
-                  src="/logo.png"
-                  alt="BERICO Research"
-                  width={220}
-                  height={80}
-                  className="h-16 md:h-20 w-auto object-contain"
-                  priority
-                />
-              </Link>
-
-              {/* Mobile: theme toggle on right (desktop version lives at far right) */}
-              <div className="lg:hidden">
-                <ThemeToggle />
-              </div>
-            </div>
+            {/* Center: Logo */}
+            <Link href="/" aria-label="BERICO Research — Home" className="flex justify-center px-4">
+              <Image
+                src="/logo.png"
+                alt="BERICO Research"
+                width={220}
+                height={80}
+                className="h-16 md:h-20 w-auto object-contain"
+                priority
+              />
+            </Link>
 
             {/* Right nav links */}
-            <ul className="hidden lg:flex items-center gap-1 flex-1 justify-end" role="list">
+            <ul className="flex items-center gap-1 justify-end" role="list">
               {RIGHT_LINKS.map(({ href, label }) => {
-                const isActive = pathname === href;
+                const isActive = currentPath === href;
                 return (
                   <li key={href}>
                     <Link
@@ -136,12 +115,37 @@ export default function Navbar() {
                   </li>
                 );
               })}
-              {/* Theme toggle — desktop far right */}
               <li className="ml-2">
                 <ThemeToggle />
               </li>
             </ul>
           </nav>
+
+          {/* Mobile: hamburger | centered logo | theme toggle */}
+          <div className="lg:hidden flex items-center justify-between h-24">
+            <button
+              onClick={() => setMobileOpen((o) => !o)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              className="w-10 h-10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
+            >
+              {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+            </button>
+
+            <Link href="/" aria-label="BERICO Research — Home" className="absolute left-1/2 -translate-x-1/2">
+              <Image
+                src="/logo.png"
+                alt="BERICO Research"
+                width={160}
+                height={60}
+                className="h-14 w-auto object-contain"
+                priority
+              />
+            </Link>
+
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
@@ -172,12 +176,12 @@ export default function Navbar() {
                     >
                       <Link
                         href={href}
-                        className={`flex items-center py-4 px-3 font-heading text-2xl font-medium border-b border-[var(--border)] transition-all duration-300 ${
-                          isActive
-                            ? "bg-[var(--accent)] text-white border-[var(--accent)] px-4"
+                        className={`flex items-center py-4 px-4 font-heading text-2xl font-medium border-b border-[var(--border)] transition-all duration-300 ${
+                          currentPath === href
+                            ? "bg-[var(--accent)] text-white border-[var(--accent)]"
                             : "text-[var(--text-primary)] hover:text-[var(--accent)]"
                         }`}
-                        aria-current={isActive ? "page" : undefined}
+                        aria-current={currentPath === href ? "page" : undefined}
                       >
                         {label}
                       </Link>

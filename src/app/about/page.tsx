@@ -15,7 +15,7 @@ const TEAM = [
     title: "Principal · Investments & Strategic Management",
     initials: "MM",
     photo: "/male.jpeg",
-    photoPosition: "50% 50%",
+    photoPosition: "50% 20%",
     sections: [
       {
         heading: "Education & Early Experience",
@@ -36,7 +36,7 @@ const TEAM = [
     title: "Partner · Business Operations & Family Office",
     initials: "PM",
     photo: "/female1.jpeg",
-    photoPosition: "50% 50%",
+    photoPosition: "50% 20%",
     sections: [
       {
         heading: "Entrepreneurship & Business",
@@ -57,7 +57,7 @@ const TEAM = [
     title: "Partner · Design & Creative Strategy",
     initials: "KM",
     photo: "/female2.jpeg",
-    photoPosition: "50% 50%",
+    photoPosition: "50% 20%",
     sections: [
       {
         heading: "Education & Early Career",
