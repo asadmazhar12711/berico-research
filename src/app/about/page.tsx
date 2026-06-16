@@ -14,8 +14,8 @@ const TEAM = [
     name: "Manish Mohanlal Mittal",
     title: "Principal · Investments & Strategic Management",
     initials: "MM",
-    photo: "/male3.jpeg",
-    photoPosition: "50% 10%",
+    photo: "/male.jpeg",
+    photoPosition: "50% 50%",
     sections: [
       {
         heading: "Education & Early Experience",
@@ -36,7 +36,7 @@ const TEAM = [
     title: "Partner · Business Operations & Family Office",
     initials: "PM",
     photo: "/female1.jpeg",
-    photoPosition: "50% 18%",
+    photoPosition: "50% 50%",
     sections: [
       {
         heading: "Entrepreneurship & Business",
@@ -57,7 +57,7 @@ const TEAM = [
     title: "Partner · Design & Creative Strategy",
     initials: "KM",
     photo: "/female2.jpeg",
-    photoPosition: "50% 12%",
+    photoPosition: "50% 50%",
     sections: [
       {
         heading: "Education & Early Career",
