@@ -6,7 +6,7 @@ import { ShieldCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Disclaimer",
   description:
-    "Important disclaimer from BERICO Research LLP. We are a Family Investment, Finance & Consulting firm. We do not advise the general public or solicit investments.",
+    "Important disclaimer from BERICO Research LLP. We are a Family Office, Finance & Consulting firm. We do not advise the general public or solicit investments.",
 };
 
 export default function DisclaimerPage() {
@@ -43,7 +43,7 @@ export default function DisclaimerPage() {
                       Nature of Business
                     </h2>
                     <p className="font-body text-lg text-[var(--text-primary)] leading-relaxed font-light">
-                      We are a Family Investment, Finance &amp; Consulting firm.
+                      We are a Family Office, Finance &amp; Consulting firm.
                     </p>
                     <p className="font-body text-lg text-[var(--text-primary)] leading-relaxed font-light mt-3">
                       We do not advise the general public and do not solicit investments or
@@ -64,7 +64,7 @@ export default function DisclaimerPage() {
                   },
                   {
                     heading: "Private Family Office",
-                    body: "BERICO Research LLP operates exclusively as a private family investment, finance and consulting entity. All activities are conducted on behalf of, and for the benefit of, the family and its associated entities. We do not offer services to, solicit funds from, or enter into investment relationships with third parties, members of the public, or outside investors.",
+                    body: "BERICO Research LLP operates exclusively as a private family office, finance and consulting entity. All activities are conducted on behalf of, and for the benefit of, the family and its associated entities. We do not offer services to, solicit funds from, or enter into investment relationships with third parties, members of the public, or outside investors.",
                   },
                   {
                     heading: "No Regulatory Solicitation",

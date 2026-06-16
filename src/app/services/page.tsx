@@ -6,13 +6,13 @@ import { TrendingUp, BarChart2, Briefcase, Building2, Shield, Search } from "luc
 export const metadata: Metadata = {
   title: "Services",
   description:
-      "BERICO Research LLP offers family investment management, financial consulting, strategic advisory, business consulting, family office management, and investment stewardship.",
+      "BERICO Research LLP offers family office management, financial consulting, strategic advisory, business consulting, family office management, and investment stewardship.",
 };
 
 const SERVICES = [
   {
     icon: TrendingUp,
-    title: "Family Investments",
+    title: "Family Offices",
     description:
       "We manage the family's investment portfolio with a disciplined, long-horizon philosophy. Our approach focuses on capital preservation, consistent growth, and strategic allocation across diversified asset classes — including equities, fixed income, and carefully selected alternatives.",
     points: [
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="What we offer"
-        subtitle="A focused range of family investment, financial, and advisory services — delivered with the care and discretion of a private family office."
+        subtitle="A focused range of family office, financial, and advisory services — delivered with the care and discretion of a private family office."
       />
 
       {/* Services Grid */}
@@ -150,7 +150,7 @@ export default function ServicesPage() {
           <MotionReveal>
             <div className="max-w-2xl mx-auto text-center">
               <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed italic">
-                BERICO Research LLP is a Family Investment, Finance &amp; Consulting firm.
+                BERICO Research LLP is a Family Office, Finance &amp; Consulting firm.
                 We do not advise the general public and do not solicit investments or finance from the public.
                 All services are conducted on a private, family basis.
               </p>

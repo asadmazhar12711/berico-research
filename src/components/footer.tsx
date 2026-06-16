@@ -33,7 +33,7 @@ export default function Footer() {
               and responsible capital stewardship.
             </p>
             <p className="font-body text-sm text-[var(--text-secondary)] mt-6 leading-relaxed italic max-w-xs">
-              We are a Family Investment, Finance &amp; Consulting firm. We do not advise the general public
+              We are a Family Office, Finance &amp; Consulting firm. We do not advise the general public
               and do not solicit investments or finance from the public.
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function Footer() {
             &copy; {year} BERICO Research LLP. All rights reserved.
           </p>
           <p className="font-body text-sm text-[var(--text-secondary)]">
-            Family Investment · Finance · Consulting
+            Family Office · Finance · Consulting
           </p>
         </div>
       </div>

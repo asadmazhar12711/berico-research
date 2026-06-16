@@ -24,7 +24,7 @@ const TIMELINE_ENTRIES = [
   },
   {
     year: "Ongoing",
-    title: "Family Investment Activities",
+    title: "Family Office Activities",
     description:
       "Parallel development of family investment portfolio — active management of equity, market, and strategic business interests.",
   },

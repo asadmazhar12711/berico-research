@@ -71,7 +71,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-heading text-[clamp(2.75rem,7vw,5.5rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-[var(--text-primary)] mb-6"
           >
-            Family Investment,
+            Family Office,
             <br />
             <span className="text-[var(--accent)]">Finance</span> &amp; Consulting
           </motion.h1>

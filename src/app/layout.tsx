@@ -22,14 +22,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bericoresearch.co.in"),
   title: {
-    default: "BERICO Research LLP | Family Investment, Finance & Consulting",
+    default: "BERICO Research LLP | Family Office, Finance & Consulting",
     template: "%s | BERICO Research LLP",
   },
   description:
-    "BERICO Research LLP is a private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship. Family Investment, Finance & Consulting firm based in Gurgaon.",
+    "BERICO Research LLP is a private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship. Family Office, Finance & Consulting firm based in Gurgaon.",
   keywords: [
     "BERICO Research LLP",
-    "family investment",
+    "family office",
     "family office",
     "finance consulting",
     "strategic advisory",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://bericoresearch.co.in",
     siteName: "BERICO Research LLP",
-    title: "BERICO Research LLP | Family Investment, Finance & Consulting",
+    title: "BERICO Research LLP | Family Office, Finance & Consulting",
     description:
       "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BERICO Research LLP | Family Investment, Finance & Consulting",
+    title: "BERICO Research LLP | Family Office, Finance & Consulting",
     description:
       "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
     images: ["/og-image.png"],
@@ -92,7 +92,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "BERICO Research LLP",
               description:
-                "A Family Investment, Finance & Consulting firm based in Gurgaon, Haryana.",
+                "A Family Office, Finance & Consulting firm based in Gurgaon, Haryana.",
               url: "https://bericoresearch.co.in",
               email: "bericoresearch@gmail.com",
               telephone: "+91-9650510232",

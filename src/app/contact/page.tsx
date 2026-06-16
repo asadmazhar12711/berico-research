@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact BERICO Research LLP — a family investment, finance and consulting firm in Gurgaon. Reach us by phone, email, or visit our office at VentureX, Sector-67.",
+    "Contact BERICO Research LLP — a family office, finance and consulting firm in Gurgaon. Reach us by phone, email, or visit our office at VentureX, Sector-67.",
 };
 
 const CONTACT_ITEMS = [
