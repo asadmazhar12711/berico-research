@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-flex flex-col gap-2 mb-4">
               <Image
                 src="/logo.png"
                 alt="BeriCo Research LLP"
@@ -27,6 +27,9 @@ export default function Footer() {
                 height={72}
                 className="h-20 w-auto object-contain"
               />
+              <span className="font-body text-xs tracking-[0.2em] uppercase text-[var(--text-secondary)] font-medium">
+                Building Wealth for Generations
+              </span>
             </Link>
             <p className="font-body text-base text-[var(--text-secondary)] leading-relaxed max-w-xs mt-3">
               A private family office focused on long-term value creation, strategic advisory,

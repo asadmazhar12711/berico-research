@@ -143,11 +143,10 @@
     font-weight: 500 !important;
   }
 
-  /* Highlight: bold italic accent for USP phrases */
+  /* Highlight: bold italic for USP phrases */
   .hl {
-    font-weight: 600;
+    font-weight: 700;
     font-style: italic;
-    color: var(--accent);
   }
 
   /* Minimum text size — no text smaller than text-sm equivalent */

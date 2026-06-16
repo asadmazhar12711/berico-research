@@ -84,7 +84,7 @@ export default function Navbar() {
             </ul>
 
             {/* Center: Logo */}
-            <Link href="/" aria-label="BeriCo Research LLP — Home" className="flex justify-center">
+            <Link href="/" aria-label="BeriCo Research LLP — Home" className="flex flex-col items-center justify-center gap-1">
               <Image
                 src="/logo.png"
                 alt="BeriCo Research LLP"
@@ -93,6 +93,9 @@ export default function Navbar() {
                 className="h-16 md:h-20 w-auto object-contain"
                 priority
               />
+              <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[var(--text-secondary)] font-medium whitespace-nowrap">
+                Building Wealth for Generations
+              </span>
             </Link>
 
             {/* Right nav links */}
@@ -133,7 +136,7 @@ export default function Navbar() {
               {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
             </button>
 
-            <Link href="/" aria-label="BeriCo Research LLP — Home" className="absolute left-1/2 -translate-x-1/2">
+            <Link href="/" aria-label="BeriCo Research LLP — Home" className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
               <Image
                 src="/logo.png"
                 alt="BeriCo Research LLP"
@@ -142,6 +145,9 @@ export default function Navbar() {
                 className="h-14 w-auto object-contain"
                 priority
               />
+              <span className="font-body text-[10px] tracking-[0.18em] uppercase text-[var(--text-secondary)] font-medium whitespace-nowrap">
+                Building Wealth for Generations
+              </span>
             </Link>
 
             <ThemeToggle />
