@@ -35,6 +35,7 @@
   }
 
   html {
+    font-size: 17px;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -141,6 +142,12 @@
   /* Override font-light to medium weight for readability */
   .font-light {
     font-weight: 500 !important;
+  }
+
+  /* Minimum text size — no text smaller than text-sm equivalent */
+  .text-xs {
+    font-size: 0.875rem !important;
+    line-height: 1.5rem !important;
   }
 
   /* Scrollbar */

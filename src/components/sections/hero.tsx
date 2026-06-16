@@ -96,7 +96,7 @@ export default function HeroSection() {
           >
             <Link
               href="/about"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-white font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 group"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-white font-body text-base font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 group"
               aria-label="Learn more about BERICO Research LLP"
             >
               Learn More
@@ -108,7 +108,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[var(--text-primary)] text-[var(--text-primary)] font-body text-sm font-medium tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[var(--text-primary)] text-[var(--text-primary)] font-body text-base font-medium tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300"
               aria-label="Contact BERICO Research LLP"
             >
               Contact Us
@@ -125,7 +125,7 @@ export default function HeroSection() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[var(--text-secondary)]">
+        <span className="font-body text-sm tracking-[0.2em] uppercase text-[var(--text-secondary)]">
           Scroll
         </span>
         <motion.div

@@ -69,7 +69,7 @@ export default function Navbar() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className={`font-body text-sm font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
+                      className={`font-body text-base font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
                         isActive
                           ? "bg-[var(--accent)] text-white"
                           : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
@@ -103,7 +103,7 @@ export default function Navbar() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className={`font-body text-sm font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
+                      className={`font-body text-base font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
                         isActive
                           ? "bg-[var(--accent)] text-white"
                           : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
@@ -192,7 +192,7 @@ export default function Navbar() {
 
               {/* Theme toggle inside drawer */}
               <div className="mt-auto pt-8 flex items-center justify-between border-t border-[var(--border)]">
-                <span className="font-body text-sm text-[var(--text-secondary)] font-medium">
+                <span className="font-body text-base text-[var(--text-secondary)] font-medium">
                   Switch Theme
                 </span>
                 <ThemeToggle />
