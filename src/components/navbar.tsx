@@ -8,14 +8,19 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "./theme-toggle";
 import { motion, AnimatePresence } from "framer-motion";
 
-const NAV_LINKS = [
+const LEFT_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
+];
+
+const RIGHT_LINKS = [
   { href: "/leadership", label: "Leadership" },
   { href: "/contact", label: "Contact" },
   { href: "/disclaimer", label: "Disclaimer" },
 ];
+
+const ALL_LINKS = [...LEFT_LINKS, ...RIGHT_LINKS];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -33,11 +38,7 @@ export default function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
@@ -54,36 +55,22 @@ export default function Navbar() {
         <div className="container-content">
           <nav
             aria-label="Main navigation"
-            className="flex items-center justify-between h-24 md:h-28"
+            className="flex items-center h-24 md:h-28"
           >
-            {/* Logo */}
-            <Link
-              href="/"
-              className="shrink-0"
-              aria-label="BERICO Research — Home"
-            >
-              <Image
-                src="/logo.png"
-                alt="BERICO Research"
-                width={220}
-                height={80}
-                className="h-16 md:h-20 w-auto object-contain"
-                priority
-              />
-            </Link>
+            {/* ── Desktop: split layout ── */}
 
-            {/* Desktop nav */}
-            <ul className="hidden lg:flex items-center gap-8" role="list">
-              {NAV_LINKS.map(({ href, label }) => {
+            {/* Left nav links */}
+            <ul className="hidden lg:flex items-center gap-1 flex-1" role="list">
+              {LEFT_LINKS.map(({ href, label }) => {
                 const isActive = pathname === href;
                 return (
                   <li key={href}>
                     <Link
                       href={href}
-                      className={`font-body text-sm font-medium tracking-wide transition-colors duration-300 accent-underline ${
+                      className={`font-body text-sm font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
                         isActive
-                          ? "text-[var(--accent)]"
-                          : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                          ? "bg-[var(--accent)] text-white"
+                          : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
                       }`}
                       aria-current={isActive ? "page" : undefined}
                     >
@@ -94,32 +81,71 @@ export default function Navbar() {
               })}
             </ul>
 
-            {/* Right actions */}
-            <div className="flex items-center gap-3">
-              <ThemeToggle />
-              <Link
-                href="/contact"
-                className="hidden md:inline-flex items-center px-5 py-2.5 text-sm font-medium font-body tracking-wide border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-300 rounded-none"
-                aria-label="Contact Us"
-              >
-                Contact Us
-              </Link>
-              {/* Mobile toggle */}
+            {/* Center: Logo (desktop) + mobile full row */}
+            <div className="flex items-center justify-between w-full lg:w-auto lg:justify-center lg:px-6">
+              {/* Mobile: hamburger on left */}
               <button
                 onClick={() => setMobileOpen((o) => !o)}
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-menu"
-                className="lg:hidden w-9 h-9 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
+                className="lg:hidden w-10 h-10 flex items-center justify-center text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
               >
-                {mobileOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+                {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
               </button>
+
+              {/* Logo — centered on mobile, centered in split on desktop */}
+              <Link
+                href="/"
+                aria-label="BERICO Research — Home"
+                className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0"
+              >
+                <Image
+                  src="/logo.png"
+                  alt="BERICO Research"
+                  width={220}
+                  height={80}
+                  className="h-16 md:h-20 w-auto object-contain"
+                  priority
+                />
+              </Link>
+
+              {/* Mobile: theme toggle on right (desktop version lives at far right) */}
+              <div className="lg:hidden">
+                <ThemeToggle />
+              </div>
             </div>
+
+            {/* Right nav links */}
+            <ul className="hidden lg:flex items-center gap-1 flex-1 justify-end" role="list">
+              {RIGHT_LINKS.map(({ href, label }) => {
+                const isActive = pathname === href;
+                return (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className={`font-body text-sm font-medium tracking-wide transition-all duration-200 px-3 py-1.5 ${
+                        isActive
+                          ? "bg-[var(--accent)] text-white"
+                          : "text-[var(--text-secondary)] hover:bg-[var(--accent)]/10 hover:text-[var(--accent)]"
+                      }`}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
+              {/* Theme toggle — desktop far right */}
+              <li className="ml-2">
+                <ThemeToggle />
+              </li>
+            </ul>
           </nav>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -131,38 +157,41 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed inset-0 z-40 bg-[var(--background)] flex flex-col pt-20 lg:hidden"
+            className="fixed inset-0 z-40 bg-[var(--background)] flex flex-col pt-24 lg:hidden"
           >
             <div className="container-content flex flex-col flex-1 py-8">
               <ul className="flex flex-col gap-1" role="list">
-                {NAV_LINKS.map(({ href, label }, i) => (
-                  <motion.li
-                    key={href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 * i, duration: 0.3 }}
-                  >
-                    <Link
-                      href={href}
-                      className={`block py-4 font-heading text-2xl font-medium border-b border-[var(--border)] transition-colors duration-300 ${
-                        pathname === href
-                          ? "text-[var(--accent)]"
-                          : "text-[var(--text-primary)] hover:text-[var(--accent)]"
-                      }`}
-                      aria-current={pathname === href ? "page" : undefined}
+                {ALL_LINKS.map(({ href, label }, i) => {
+                  const isActive = pathname === href;
+                  return (
+                    <motion.li
+                      key={href}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.05 * i, duration: 0.3 }}
                     >
-                      {label}
-                    </Link>
-                  </motion.li>
-                ))}
+                      <Link
+                        href={href}
+                        className={`flex items-center py-4 px-3 font-heading text-2xl font-medium border-b border-[var(--border)] transition-all duration-300 ${
+                          isActive
+                            ? "bg-[var(--accent)] text-white border-[var(--accent)] px-4"
+                            : "text-[var(--text-primary)] hover:text-[var(--accent)]"
+                        }`}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {label}
+                      </Link>
+                    </motion.li>
+                  );
+                })}
               </ul>
-              <div className="mt-auto pt-8">
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-4 text-sm font-medium font-body tracking-widest uppercase border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all duration-300"
-                >
-                  Contact Us
-                </Link>
+
+              {/* Theme toggle inside drawer */}
+              <div className="mt-auto pt-8 flex items-center justify-between border-t border-[var(--border)]">
+                <span className="font-body text-sm text-[var(--text-secondary)] font-medium">
+                  Switch Theme
+                </span>
+                <ThemeToggle />
               </div>
             </div>
           </motion.div>
