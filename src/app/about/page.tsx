@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import PageHero from "@/components/page-hero";
@@ -10,7 +9,7 @@ export const metadata: Metadata = {
     "Learn about BeriCo Research LLP — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
 };
 
-const TEAM: { name: string; title: string; initials: string; photo: string; photoPosition: string; sections: { heading: string; body: ReactNode }[] }[] = [
+const TEAM = [
   {
     name: "Manish Mohanlal Mittal",
     title: "Principal · Investments & Strategic Management",
@@ -20,15 +19,15 @@ const TEAM: { name: string; title: string; initials: string; photo: string; phot
     sections: [
       {
         heading: "Education & Early Experience",
-        body: "Manish Mohanlal Mittal is a Commerce Graduate from the prestigious H.R. College of Commerce and Economics, Mumbai University. During his formative years, he was actively involved in the traditional family business of cloth manufacturing and trading, gaining foundational experience in commerce and operations.",
+        body: "Manish Mohanlal Mittal is a Commerce Graduate from the <span class=\"hl\">prestigious H.R. College of Commerce and Economics, Mumbai University</span>. During his formative years, he was actively involved in the traditional family business of cloth manufacturing and trading, gaining foundational experience in commerce and operations.",
       },
       {
         heading: "Shail Foods & Harbilas Beriwala Tenets LLP",
-        body: "Manish founded Shail Foods & Packaging Pvt Ltd in Goa — a bread and bakery unit initially under the Modern franchise, now operating under the proprietary Melbon brand. The company supplies Goa markets, five-star hotels, and defence institutions. He also founded Harbilas Beriwala Tenets LLP to manage family investments and stock market activities.",
+        body: "Manish founded Shail Foods &amp; Packaging Pvt Ltd in Goa — a bread and bakery unit initially under the Modern franchise, now operating under the proprietary Melbon brand. The company <span class=\"hl\">supplies Goa markets, five-star hotels, and defence institutions</span>. He also founded Harbilas Beriwala Tenets LLP to manage family investments and stock market activities.",
       },
       {
         heading: "Strategic Leadership",
-        body: <>With <em className="font-bold text-[var(--accent)]">over 30 years of business experience</em> spanning manufacturing, trading, and investment management, Manish brings <em className="font-bold text-[var(--accent)]">deep operational knowledge and strategic financial insight</em> to BeriCo Research LLP. His long-term perspective informs the family&apos;s capital allocation and advisory philosophy.</>,
+        body: "With <span class=\"hl\">over 30 years of business experience</span> spanning manufacturing, trading, and investment management, Manish brings <span class=\"hl\">deep operational knowledge and strategic financial insight</span> to BeriCo Research LLP. His long-term perspective informs the family's capital allocation and advisory philosophy.",
       },
     ],
   },
@@ -41,15 +40,15 @@ const TEAM: { name: string; title: string; initials: string; photo: string; phot
     sections: [
       {
         heading: "Entrepreneurship & Business",
-        body: "Pooja Manish Mittal is a devoted businesswoman and entrepreneur with a distinguished record of building and sustaining family enterprise. She is a Founder Promoter and Shareholder in Shail Foods & Packaging Pvt Ltd, a family-owned company established in Goa in 1997.",
+        body: "Pooja Manish Mittal is a devoted businesswoman and entrepreneur with a <span class=\"hl\">distinguished record of building and sustaining family enterprise</span>. She is a Founder Promoter and Shareholder in Shail Foods &amp; Packaging Pvt Ltd, a family-owned company established in Goa in 1997.",
       },
       {
         heading: "Shail Foods & Packaging",
-        body: <>Under Pooja&apos;s stewardship, Shail Foods has grown from a local bread and bakery manufacturer — now the Melbon brand — to supply products across Goa markets, <em className="font-bold text-[var(--accent)]">leading five-star hotels</em>, and as a <em className="font-bold text-[var(--accent)]">dedicated supplier to the Indian Navy Goa and Indian Army Goa</em>.</>,
+        body: "Under Pooja's stewardship, Shail Foods has grown from a local bread and bakery manufacturer — erstwhile operating under the Modern brand, now the Melbon brand — to supply products across Goa markets, leading five-star hotels, and as a <span class=\"hl\">dedicated supplier to the Indian Navy Goa and Indian Army Goa</span>.",
       },
       {
         heading: "Family Office",
-        body: "Pooja is also a Partner in Harbilas Beriwala Tenets LLP, the family office responsible for managing stock market investments and overall family finances. Her operational discipline and financial acumen are central to the family's investment activities.",
+        body: "Pooja is also a Partner in Harbilas Beriwala Tenets LLP, the family office responsible for <span class=\"hl\">managing stock market investments and overall family finances</span>. Her operational discipline and financial acumen are central to the family's investment activities.",
       },
     ],
   },
@@ -62,19 +61,19 @@ const TEAM: { name: string; title: string; initials: string; photo: string; phot
     sections: [
       {
         heading: "Education & Early Career",
-        body: "Kritika Mittal is an Interior Design graduate from Pearl Academy, New Delhi — one of India's foremost design institutions. She began her professional journey as an intern with Essentia Environments, Gurgaon, where her talent and dedication were quickly recognised.",
+        body: "Kritika Mittal is an Interior Design graduate from Pearl Academy, New Delhi — <span class=\"hl\">one of India's foremost design institutions</span>. She began her professional journey as an intern with Essentia Environments, Gurgaon, where her talent and dedication were quickly recognised.",
       },
       {
         heading: "Professional Growth",
-        body: <>Promoted to lead a <em className="font-bold text-[var(--accent)]">team of 12 designers</em> as Senior Executive Designer, Kritika worked on a portfolio of <em className="font-bold text-[var(--accent)]">ultra-luxury residential and commercial projects</em>. Her work is defined by <em className="font-bold text-[var(--accent)]">meticulous attention to detail, spatial intelligence</em>, and a commitment to client-centric design.</>,
+        body: "Promoted to lead a <span class=\"hl\">team of 12 designers</span> as Senior Executive Designer, Kritika worked on a portfolio of <span class=\"hl\">ultra-luxury residential and commercial projects</span>. Her work is defined by meticulous attention to detail, spatial intelligence, and a commitment to client-centric design.",
       },
       {
         heading: "Studio Unnamedd",
-        body: "Kritika co-founded Studio Unnamedd with her husband Mr Rahul Nanda, with whom she shares a long-standing creative and professional bond. The studio has completed numerous projects across Delhi NCR, Mumbai, and Goa, with several ongoing commissions in New Delhi, Gurgaon, Mumbai, and Goa.",
+        body: "Kritika co-founded Studio Unnamedd with her husband Mr Rahul Nanda, with whom she shares a long-standing creative and professional bond. The studio has completed <span class=\"hl\">numerous projects across Delhi NCR, Mumbai, and Goa</span>, with several ongoing commissions in New Delhi, Gurgaon, Mumbai, and Goa.",
       },
       {
         heading: "Harbilas Beriwala Tenets LLP",
-        body: "Kritika is also a Partner in Harbilas Beriwala Tenets LLP, the family office entity through which the family manages its stock market Investments and broader financial affairs.",
+        body: "Kritika is also a <span class=\"hl\">Partner in Harbilas Beriwala Tenets LLP</span>, the family office entity through which the family manages its stock market Investments and broader financial affairs.",
       },
     ],
   },
@@ -96,12 +95,10 @@ export default function AboutPage() {
             <MotionReveal>
               <div className="divider mx-auto mb-8" />
               <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                Founded by the Mittal family, BeriCo Research LLP draws on{" "}
-                <em className="font-bold text-[var(--accent)]">decades of entrepreneurial experience</em>
-                {" "}in food manufacturing, business operations, and strategic financial management.
-                Our approach is grounded in the belief that{" "}
-                <em className="font-bold text-[var(--accent)]">prudent stewardship, disciplined investing, and thoughtful advisory</em>
-                {" "}create enduring value across generations.
+                Founded by the Mittal family, BeriCo Research LLP draws on decades of entrepreneurial
+                experience in food manufacturing, business operations, and strategic financial management.
+                Our approach is grounded in the belief that prudent stewardship, disciplined investing,
+                and thoughtful advisory create enduring value across generations.
               </p>
             </MotionReveal>
           </div>
@@ -170,9 +167,10 @@ export default function AboutPage() {
                           <h4 className="font-body text-xs uppercase tracking-[0.18em] font-semibold text-[var(--text-secondary)] mb-4">
                             {section.heading}
                           </h4>
-                          <p className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light">
-                            {section.body}
-                          </p>
+                          <p
+                            className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light"
+                            dangerouslySetInnerHTML={{ __html: section.body }}
+                          />
                         </div>
                       </MotionReveal>
                     ))}

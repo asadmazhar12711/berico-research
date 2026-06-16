@@ -83,9 +83,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl mb-12 font-light"
           >
-            A private family office focused on{" "}
-            <em className="font-bold text-[var(--accent)]">long-term value creation</em>,{" "}
-            <em className="font-bold text-[var(--accent)]">strategic advisory</em>,
+            A private family office focused on long-term value creation, strategic advisory,
             and responsible capital stewardship.
           </motion.p>
 

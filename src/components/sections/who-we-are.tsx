@@ -56,20 +56,19 @@ export default function WhoWeAre() {
             <MotionReveal delay={0.2}>
               <p className="font-body text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mb-6 font-light">
                 BeriCo Research LLP is a family office, finance, and consulting firm with{" "}
-                <em className="font-bold text-[var(--accent)]">deep roots in business, industry, and entrepreneurial enterprise</em>.
-                {" "}Founded on principles of{" "}
-                <em className="font-bold text-[var(--accent)]">prudence, integrity, and long-term thinking</em>,
-                {" "}we manage family capital and provide strategic counsel with discretion and care.
+                <span className="hl">deep roots in business, industry, and entrepreneurial enterprise</span>.
+                Founded on principles of{" "}
+                <span className="hl">prudence, integrity, and long-term thinking</span>, we manage family capital and provide
+                strategic counsel with discretion and care.
               </p>
             </MotionReveal>
 
             <MotionReveal delay={0.3}>
               <p className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light">
                 Our approach combines{" "}
-                <em className="font-bold text-[var(--accent)]">generational business acumen</em>
-                {" "}with{" "}
-                <em className="font-bold text-[var(--accent)]">disciplined financial stewardship</em>
-                {" "}— allowing us to serve as trusted advisors and stewards for family assets and strategic interests.
+                <span className="hl">generational business acumen</span> with{" "}
+                <span className="hl">disciplined financial stewardship</span> — allowing us to serve as trusted
+                advisors and stewards for family assets and strategic interests.
               </p>
             </MotionReveal>
           </div>

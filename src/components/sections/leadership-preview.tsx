@@ -1,14 +1,13 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import { ArrowRight } from "lucide-react";
 
-const LEADERS: { name: string; title: string; bio: ReactNode; initials: string; photo: string; photoPosition: string }[] = [
+const LEADERS = [
   {
     name: "Manish Mohanlal Mittal",
     title: "Principal · Investments & Strategic Management",
-    bio: <>Commerce Graduate from H.R. College, Mumbai University with <em className="font-bold text-[var(--accent)]">30+ years in business</em>. Founder of Shail Foods &amp; Packaging Pvt Ltd and Harbilas Beriwala Tenets LLP. Expert in <em className="font-bold text-[var(--accent)]">operations and strategic financial management</em>.</>,
+    bio: "Commerce Graduate from H.R. College, Mumbai University with 30+ years in business. Founder of Shail Foods & Packaging Pvt Ltd and Harbilas Beriwala Tenets LLP. Expert in operations and strategic financial management.",
     initials: "MM",
     photo: "/male.jpeg",
     photoPosition: "50% 20%",
@@ -16,7 +15,7 @@ const LEADERS: { name: string; title: string; bio: ReactNode; initials: string; 
   {
     name: "Pooja Manish Mittal",
     title: "Partner · Business Operations & Family Office",
-    bio: <>Founder Promoter &amp; Shareholder in Shail Foods &amp; Packaging Pvt Ltd <em className="font-bold text-[var(--accent)]">since 1997</em>. Partner at Harbilas Beriwala Tenets LLP. Managing family investments and finances across <em className="font-bold text-[var(--accent)]">key institutional accounts</em>.</>,
+    bio: "Founder Promoter & Shareholder in Shail Foods & Packaging Pvt Ltd since 1997. Partner at Harbilas Beriwala Tenets LLP. Managing family investments and finances across key institutional accounts.",
     initials: "PM",
     photo: "/female1.jpeg",
     photoPosition: "50% 20%",
@@ -24,7 +23,7 @@ const LEADERS: { name: string; title: string; bio: ReactNode; initials: string; 
   {
     name: "Kritika Mittal",
     title: "Partner · Design & Creative Strategy",
-    bio: <>Interior Designer graduate from <em className="font-bold text-[var(--accent)]">Pearl Academy, New Delhi</em>. Led a <em className="font-bold text-[var(--accent)]">team of 12 designers</em> at Essentia Environments and completed <em className="font-bold text-[var(--accent)]">ultra-luxury projects across Delhi NCR, Mumbai, and Goa</em>. Co-founder of Studio Unnamedd.</>,
+    bio: "Interior Designer graduate from Pearl Academy, New Delhi. Led a team of 12 designers at Essentia Environments and completed ultra-luxury projects across Delhi NCR, Mumbai, and Goa. Co-founder of Studio Unnamedd.",
     initials: "KM",
     photo: "/female2.jpeg",
     photoPosition: "50% 20%",
