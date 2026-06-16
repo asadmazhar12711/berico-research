@@ -6,7 +6,7 @@ import PageHero from "@/components/page-hero";
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "Meet the leadership of BERICO Research — Manish Mohanlal Mittal, Pooja Manish Mittal, and Kritika Mittal — the family behind the firm.",
+    "Meet the leadership of BERICO Research LLP — Manish Mohanlal Mittal, Pooja Manish Mittal, and Kritika Mittal — the family behind the firm.",
 };
 
 const LEADERS = [
@@ -61,6 +61,7 @@ const LEADERS = [
       "Kritika Mittal is a graduate of Pearl Academy, New Delhi — one of India's premier institutions for design education — where she developed a refined sensibility for space, material, and human experience. Her formal training laid the foundation for a career characterised by creative rigour and exceptional execution.",
       "She began her professional journey at Essentia Environments, Gurgaon, where she quickly advanced from intern to Senior Executive Designer, leading a team of 12 designers across a portfolio of ultra-luxury residential and commercial projects. Her work earned recognition for its thoughtful spatial planning, bespoke material specification, and meticulous project delivery.",
       "Driven by entrepreneurial ambition, Kritika co-founded Studio Unnamedd alongside her husband, Mr Rahul Nanda — a creative collaboration forged during their years at Pearl Academy. The studio has since completed numerous high-end projects across Delhi NCR, Mumbai, and Goa, with multiple ongoing commissions across these markets.",
+      "Kritika is also a Partner in Harbilas Beriwala Tenets LLP, the family office entity through which the family manages its stock market Investments and broader financial affairs.",
     ],
     achievements: [
       "Interior Design Graduate, Pearl Academy, New Delhi",
@@ -68,6 +69,7 @@ const LEADERS = [
       "Ultra-luxury residential and commercial project portfolio",
       "Co-founder, Studio Unnamedd",
       "Active project presence across Delhi NCR, Mumbai & Goa",
+      "Partner, Harbilas Beriwala Tenets LLP",
     ],
   },
 ];
@@ -77,7 +79,7 @@ export default function LeadershipPage() {
     <>
       <PageHero
         eyebrow="Leadership"
-        title="The family behind BERICO Research"
+        title="The family behind BERICO Research LLP"
         subtitle="Three principals. Decades of combined experience. A shared commitment to building lasting value."
       />
 

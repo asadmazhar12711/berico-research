@@ -97,7 +97,7 @@ export default function HeroSection() {
             <Link
               href="/about"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-white font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 group"
-              aria-label="Learn more about BERICO Research"
+              aria-label="Learn more about BERICO Research LLP"
             >
               Learn More
               <ArrowRight
@@ -109,7 +109,7 @@ export default function HeroSection() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border border-[var(--text-primary)] text-[var(--text-primary)] font-body text-sm font-medium tracking-wide hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300"
-              aria-label="Contact BERICO Research"
+              aria-label="Contact BERICO Research LLP"
             >
               Contact Us
             </Link>

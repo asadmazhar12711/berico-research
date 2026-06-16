@@ -22,7 +22,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/logo.png"
-                alt="BERICO Research"
+                alt="BERICO Research LLP"
                 width={160}
                 height={56}
                 className="h-14 w-auto object-contain"
@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-xs text-[var(--text-secondary)]">
-            &copy; {year} BERICO Research. All rights reserved.
+            &copy; {year} BERICO Research LLP. All rights reserved.
           </p>
           <p className="font-body text-xs text-[var(--text-secondary)]">
             Family Investment · Finance · Consulting

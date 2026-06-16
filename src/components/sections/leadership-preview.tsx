@@ -52,7 +52,7 @@ export default function LeadershipPreview() {
             >
               The people behind
               <br />
-              BERICO Research
+              BERICO Research LLP
             </h2>
           </div>
           <Link

@@ -6,7 +6,7 @@ import { ShieldCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Disclaimer",
   description:
-    "Important disclaimer from BERICO Research. We are a Family Investment, Finance & Consulting firm. We do not advise the general public or solicit investments.",
+    "Important disclaimer from BERICO Research LLP. We are a Family Investment, Finance & Consulting firm. We do not advise the general public or solicit investments.",
 };
 
 export default function DisclaimerPage() {
@@ -64,19 +64,19 @@ export default function DisclaimerPage() {
                   },
                   {
                     heading: "Private Family Office",
-                    body: "BERICO Research operates exclusively as a private family investment, finance and consulting entity. All activities are conducted on behalf of, and for the benefit of, the family and its associated entities. We do not offer services to, solicit funds from, or enter into investment relationships with third parties, members of the public, or outside investors.",
+                    body: "BERICO Research LLP operates exclusively as a private family investment, finance and consulting entity. All activities are conducted on behalf of, and for the benefit of, the family and its associated entities. We do not offer services to, solicit funds from, or enter into investment relationships with third parties, members of the public, or outside investors.",
                   },
                   {
                     heading: "No Regulatory Solicitation",
-                    body: "BERICO Research is not a registered investment advisor, broker-dealer, portfolio manager, or financial institution under any applicable regulatory framework. The information contained herein is not intended to form the basis of any investment or financial decision by any third party.",
+                    body: "BERICO Research LLP is not a registered investment advisor, broker-dealer, portfolio manager, or financial institution under any applicable regulatory framework. The information contained herein is not intended to form the basis of any investment or financial decision by any third party.",
                   },
                   {
                     heading: "Accuracy of Information",
-                    body: "While we endeavour to ensure the accuracy and currency of information published on this website, BERICO Research makes no representations or warranties — express or implied — regarding the completeness, accuracy, or reliability of any information herein. We reserve the right to modify, update, or remove content at any time without notice.",
+                    body: "While we endeavour to ensure the accuracy and currency of information published on this website, BERICO Research LLP makes no representations or warranties — express or implied — regarding the completeness, accuracy, or reliability of any information herein. We reserve the right to modify, update, or remove content at any time without notice.",
                   },
                   {
                     heading: "External Links",
-                    body: "This website may contain links to third-party websites for reference purposes. BERICO Research does not endorse, control, or assume responsibility for the content or practices of any linked website.",
+                    body: "This website may contain links to third-party websites for reference purposes. BERICO Research LLP does not endorse, control, or assume responsibility for the content or practices of any linked website.",
                   },
                   {
                     heading: "Contact",

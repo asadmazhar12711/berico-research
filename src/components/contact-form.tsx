@@ -39,8 +39,8 @@ export default function ContactForm() {
     try {
       const payload = {
         access_key: "YOUR_WEB3FORMS_KEY", // sign up free at web3forms.com → paste key here
-        subject: `New enquiry from ${data.get("name")} — BERICO Research`,
-        from_name: "BERICO Research Website",
+        subject: `New enquiry from ${data.get("name")} — BERICO Research LLP`,
+        from_name: "BERICO Research LLP Website",
         name: data.get("name"),
         email: data.get("email"),
         phone: data.get("phone") || "—",
@@ -218,7 +218,7 @@ export default function ContactForm() {
               type="submit"
               disabled={status === "loading"}
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[var(--accent)] text-white font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity duration-300 disabled:opacity-60 disabled:cursor-not-allowed group mt-2"
-              aria-label="Send your message to BERICO Research"
+              aria-label="Send your message to BERICO Research LLP"
             >
               {status === "loading" ? (
                 <>

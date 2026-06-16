@@ -6,7 +6,7 @@ import PageHero from "@/components/page-hero";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about BERICO Research — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
+    "Learn about BERICO Research LLP — a family office founded on decades of business, industry, and entrepreneurial enterprise. Meet the Mittal family.",
 };
 
 const TEAM = [
@@ -27,7 +27,7 @@ const TEAM = [
       },
       {
         heading: "Strategic Leadership",
-        body: "With over 30 years of business experience spanning manufacturing, trading, and investment management, Manish brings deep operational knowledge and strategic financial insight to BERICO Research. His long-term perspective informs the family's capital allocation and advisory philosophy.",
+        body: "With over 30 years of business experience spanning manufacturing, trading, and investment management, Manish brings deep operational knowledge and strategic financial insight to BERICO Research LLP. His long-term perspective informs the family's capital allocation and advisory philosophy.",
       },
     ],
   },
@@ -71,6 +71,10 @@ const TEAM = [
         heading: "Studio Unnamedd",
         body: "Kritika co-founded Studio Unnamedd with her husband Mr Rahul Nanda, with whom she shares a long-standing creative and professional bond. The studio has completed numerous projects across Delhi NCR, Mumbai, and Goa, with several ongoing commissions in New Delhi, Gurgaon, Mumbai, and Goa.",
       },
+      {
+        heading: "Harbilas Beriwala Tenets LLP",
+        body: "Kritika is also a Partner in Harbilas Beriwala Tenets LLP, the family office entity through which the family manages its stock market Investments and broader financial affairs.",
+      },
     ],
   },
 ];
@@ -81,7 +85,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="A family built on enterprise, integrity & long-term thinking"
-        subtitle="BERICO Research is the investment, finance, and consulting arm of a family with deep roots in Indian business and industry."
+        subtitle="BERICO Research LLP is the investment, finance, and consulting arm of a family with deep roots in Indian business and industry."
       />
 
       {/* Family intro */}
@@ -91,7 +95,7 @@ export default function AboutPage() {
             <MotionReveal>
               <div className="divider mx-auto mb-8" />
               <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                Founded by the Mittal family, BERICO Research draws on decades of entrepreneurial
+                Founded by the Mittal family, BERICO Research LLP draws on decades of entrepreneurial
                 experience in food manufacturing, business operations, and strategic financial management.
                 Our approach is grounded in the belief that prudent stewardship, disciplined investing,
                 and thoughtful advisory create enduring value across generations.
@@ -115,7 +119,7 @@ export default function AboutPage() {
               id="team-heading"
               className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)]"
             >
-              The people of BERICO Research
+              The people of BERICO Research LLP
             </h2>
           </MotionReveal>
 

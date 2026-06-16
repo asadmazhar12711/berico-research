@@ -55,7 +55,7 @@ export default function WhoWeAre() {
 
             <MotionReveal delay={0.2}>
               <p className="font-body text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mb-6 font-light">
-                BERICO Research is a family investment, finance, and consulting firm with deep roots
+                BERICO Research LLP is a family investment, finance, and consulting firm with deep roots
                 in business, industry, and entrepreneurial enterprise. Founded on principles of
                 prudence, integrity, and long-term thinking, we manage family capital and provide
                 strategic counsel with discretion and care.

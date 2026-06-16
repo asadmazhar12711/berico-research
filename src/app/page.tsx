@@ -8,7 +8,7 @@ import OfficeLocation from "@/components/sections/office-location";
 import ContactSection from "@/components/sections/contact-section";
 
 export const metadata: Metadata = {
-  title: "BERICO Research | Family Investment, Finance & Consulting",
+  title: "BERICO Research LLP | Family Investment, Finance & Consulting",
   description:
     "A private family office focused on long-term value creation, strategic advisory, and responsible capital stewardship.",
 };
