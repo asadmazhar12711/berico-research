@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import SectionEyebrow from "@/components/section-eyebrow";
 
 export default function HeroSection() {
   return (
     <section
       aria-label="Hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-x-hidden"
       style={{ backgroundColor: "var(--background)" }}
     >
       {/* Abstract luxury background */}
       <div className="absolute inset-0" aria-hidden="true">
-        {/* Subtle grid lines */}
         <svg
           className="absolute inset-0 w-full h-full opacity-[0.035] dark:opacity-[0.06]"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,16 +26,12 @@ export default function HeroSection() {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
 
-        {/* Large decorative circles */}
         <div
           className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-[var(--accent)] opacity-[0.06]"
-          style={{ transform: "translate(0, 0)" }}
         />
         <div
           className="absolute -bottom-48 -left-48 w-[800px] h-[800px] rounded-full border border-[var(--accent)] opacity-[0.04]"
         />
-
-        {/* Accent gradient orb */}
         <div
           className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full opacity-[0.06]"
           style={{
@@ -43,56 +39,45 @@ export default function HeroSection() {
             filter: "blur(40px)",
           }}
         />
-
-        {/* Thin horizontal rule */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-[var(--border)]" />
       </div>
 
-      {/* Content */}
-      <div className="container-content relative z-10 pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-4xl">
-          {/* Eyebrow */}
+      <div className="container-content relative z-10 pt-[6.5rem] pb-20 lg:pt-44 lg:pb-28">
+        <div className="max-w-4xl mx-auto text-center section-intro">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex items-center gap-4 mb-8"
           >
-            <div className="h-px w-12 bg-[var(--accent)]" />
-            <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-              Gurgaon · Haryana · India
-            </span>
+            <SectionEyebrow prominent>Gurgaon · Haryana · India</SectionEyebrow>
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-heading text-[clamp(2.75rem,7vw,5.5rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-[var(--text-primary)] mb-6"
+            className="font-heading text-[clamp(2rem,6.5vw,5.5rem)] font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--text-primary)] mb-6 break-words"
           >
-            Family Office,
-            <br />
+            Family Office,{" "}
             <span className="text-[var(--accent)]">Finance</span> &amp; Consulting
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl mb-12 font-light"
+            className="font-body text-lg md:text-xl text-justify-block text-balance text-[var(--text-secondary)] leading-relaxed max-w-xl mb-10 md:mb-12 font-light"
           >
-            A private family office focused on long-term value creation, strategic advisory,
+            A private family office focused on{" "}
+            <span className="hl">long-term value creation</span>, strategic advisory,
             and responsible capital stewardship.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link
               href="/about"
@@ -117,7 +102,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

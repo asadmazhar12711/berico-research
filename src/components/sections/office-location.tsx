@@ -1,5 +1,14 @@
 import MotionReveal from "@/components/motion-reveal";
-import { MapPin, Phone, Mail, Building2 } from "lucide-react";
+import SectionEyebrow from "@/components/section-eyebrow";
+import { MapPin, Phone, Mail, Building2, MessageCircle } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  CONTACT_MAPS_URL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  CONTACT_WHATSAPP,
+} from "@/lib/contact";
 
 export default function OfficeLocation() {
   const mapSrc =
@@ -13,14 +22,9 @@ export default function OfficeLocation() {
       <div className="container-content">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           {/* Info */}
-          <div>
+          <div className="section-intro">
             <MotionReveal>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px w-12 bg-[var(--accent)]" />
-                <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-                  Our Office
-                </span>
-              </div>
+              <SectionEyebrow>Contact Us</SectionEyebrow>
             </MotionReveal>
 
             <MotionReveal delay={0.1}>
@@ -28,15 +32,13 @@ export default function OfficeLocation() {
                 id="location-heading"
                 className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)] mb-8"
               >
-                Located in the heart
-                <br />
-                of Gurgaon
+                Office Address
               </h2>
             </MotionReveal>
 
             <MotionReveal delay={0.2}>
-              <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-5 group">
+              <div className="flex flex-col gap-8 items-center md:items-center contact-details w-full max-w-sm md:max-w-md mx-auto">
+                <div className="flex mobile-icon-stack gap-4 group w-full max-w-sm md:max-w-none">
                   <div className="w-10 h-10 border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-[var(--accent)] transition-colors duration-300">
                     <Building2 size={18} strokeWidth={1.25} className="text-[var(--accent)]" />
                   </div>
@@ -45,15 +47,39 @@ export default function OfficeLocation() {
                       Office
                     </p>
                     <p className="font-body text-sm text-[var(--text-primary)] font-medium">VentureX</p>
-                    <address className="font-body text-sm text-[var(--text-secondary)] not-italic leading-relaxed mt-1">
+                    <a
+                      href={CONTACT_MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-body text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-300 not-italic leading-relaxed mt-1 block"
+                    >
                       A-436, 4th Floor<br />
                       Sector-67, Landmark Cyber Park<br />
                       Gurgaon, Haryana – 122102
-                    </address>
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5 group">
+                <div className="flex mobile-icon-stack gap-4 group w-full max-w-sm md:max-w-none">
+                  <div className="w-10 h-10 border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-[var(--accent)] transition-colors duration-300">
+                    <MessageCircle size={18} strokeWidth={1.25} className="text-[var(--accent)]" />
+                  </div>
+                  <div>
+                    <p className="font-body text-xs uppercase tracking-[0.15em] text-[var(--text-secondary)] font-medium mb-1">
+                      WhatsApp
+                    </p>
+                    <a
+                      href={CONTACT_WHATSAPP}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
+                    >
+                      Message us on WhatsApp
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex mobile-icon-stack gap-4 group w-full max-w-sm md:max-w-none">
                   <div className="w-10 h-10 border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-[var(--accent)] transition-colors duration-300">
                     <Phone size={18} strokeWidth={1.25} className="text-[var(--accent)]" />
                   </div>
@@ -62,15 +88,15 @@ export default function OfficeLocation() {
                       Phone
                     </p>
                     <a
-                      href="tel:+919650510232"
+                      href={CONTACT_PHONE_TEL}
                       className="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
                     >
-                      +91 96505 10232
+                      {CONTACT_PHONE_DISPLAY}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5 group">
+                <div className="flex mobile-icon-stack gap-4 group w-full max-w-sm md:max-w-none">
                   <div className="w-10 h-10 border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-[var(--accent)] transition-colors duration-300">
                     <Mail size={18} strokeWidth={1.25} className="text-[var(--accent)]" />
                   </div>
@@ -79,10 +105,10 @@ export default function OfficeLocation() {
                       Email
                     </p>
                     <a
-                      href="mailto:BeriCoresearch@gmail.com"
+                      href={CONTACT_MAILTO}
                       className="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
                     >
-                      BeriCoresearch@gmail.com
+                      {CONTACT_EMAIL}
                     </a>
                   </div>
                 </div>

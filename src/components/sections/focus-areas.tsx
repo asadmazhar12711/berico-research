@@ -1,30 +1,47 @@
 import MotionReveal from "@/components/motion-reveal";
+import SectionEyebrow from "@/components/section-eyebrow";
 import { TrendingUp, BarChart2, Briefcase, Building2 } from "lucide-react";
 
 const AREAS = [
   {
     icon: TrendingUp,
     label: "Investments",
-    description:
-      "Strategic allocation of family capital across equity, fixed income, and alternative assets — guided by long-term wealth preservation and growth objectives.",
+    description: (
+      <>
+        Strategic allocation of family capital across equity, fixed income, and alternative assets — guided by{" "}
+        <span className="hl">long-term wealth preservation and growth</span> objectives.
+      </>
+    ),
   },
   {
     icon: BarChart2,
     label: "Finance",
-    description:
-      "Disciplined financial planning, reporting, and oversight ensuring the integrity and sustainability of family financial resources.",
+    description: (
+      <>
+        Disciplined financial planning, reporting, and oversight ensuring the{" "}
+        <span className="hl">integrity and sustainability</span> of family financial resources.
+      </>
+    ),
   },
   {
     icon: Briefcase,
     label: "Consulting",
-    description:
-      "Seasoned strategic advisory drawing on decades of business operation, entrepreneurial success, and sector-specific expertise.",
+    description: (
+      <>
+        Seasoned strategic advisory drawing on{" "}
+        <span className="hl">decades of business operation</span>, entrepreneurial success, and sector-specific expertise.
+      </>
+    ),
   },
   {
     icon: Building2,
     label: "Family Office Management",
-    description:
-      "Holistic governance and management of family office activities — coordinating investments, advisory, compliance, and family legacy planning.",
+    description: (
+      <>
+        Holistic governance and management of family office activities — coordinating investments, advisory, compliance, and{" "}
+        <span className="hl">family legacy planning</span>.
+      </>
+    ),
   },
 ];
 
@@ -36,13 +53,8 @@ export default function FocusAreas() {
     >
       <div className="container-content">
         {/* Header */}
-        <MotionReveal className="max-w-xl mb-16">
-          <div className="flex items-center gap-4 mb-5">
-            <div className="h-px w-12 bg-[var(--accent)]" />
-            <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-              Focus Areas
-            </span>
-          </div>
+        <MotionReveal className="section-intro max-w-xl mb-16 mx-auto">
+          <SectionEyebrow>Focus Areas</SectionEyebrow>
           <h2
             id="focus-areas-heading"
             className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)]"
@@ -59,9 +71,9 @@ export default function FocusAreas() {
             const Icon = area.icon;
             return (
               <MotionReveal key={area.label} delay={0.1 * i}>
-                <div className="group flex flex-col gap-6 p-8 border border-[var(--border)] hover:border-[var(--accent)] bg-[var(--surface)] hover:bg-[var(--background)] transition-all duration-500 h-full">
+                <div className="group flex flex-col gap-6 p-8 border border-[var(--border)] hover:border-[var(--accent)] bg-[var(--surface)] hover:bg-[var(--background)] transition-all duration-500 h-full feature-card">
                   <div
-                    className="w-12 h-12 border border-[var(--border)] group-hover:border-[var(--accent)] flex items-center justify-center transition-all duration-500"
+                    className="w-12 h-12 border border-[var(--border)] group-hover:border-[var(--accent)] flex items-center justify-center transition-all duration-500 mx-auto"
                     aria-hidden="true"
                   >
                     <Icon
@@ -74,7 +86,7 @@ export default function FocusAreas() {
                     <h3 className="font-heading text-xl font-semibold text-[var(--text-primary)] mb-3">
                       {area.label}
                     </h3>
-                    <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+                    <p className="font-body text-sm leading-relaxed text-justify-block text-[var(--text-secondary)] font-light text-balance">
                       {area.description}
                     </p>
                   </div>

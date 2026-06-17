@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import SectionEyebrow from "@/components/section-eyebrow";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
@@ -8,13 +9,9 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--background)] px-6 text-center">
-      <div className="flex items-center gap-4 mb-8">
-        <div className="h-px w-12 bg-[var(--accent)]" />
-        <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-          404
-        </span>
-        <div className="h-px w-12 bg-[var(--accent)]" />
-      </div>
+      <SectionEyebrow symmetric className="justify-center mb-8">
+        404
+      </SectionEyebrow>
       <h1 className="font-heading text-[clamp(2rem,5vw,4rem)] font-semibold text-[var(--text-primary)] mb-4 leading-tight">
         Page not found
       </h1>

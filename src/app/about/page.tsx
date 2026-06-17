@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import MotionReveal from "@/components/motion-reveal";
 import PageHero from "@/components/page-hero";
+import SectionEyebrow from "@/components/section-eyebrow";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -19,7 +20,7 @@ const TEAM = [
     sections: [
       {
         heading: "Education & Early Experience",
-        body: "Manish Mohanlal Mittal is a Commerce Graduate from the <span class=\"hl\">prestigious H.R. College of Commerce and Economics, Mumbai University</span>. During his formative years, he was actively involved in the traditional family business of cloth manufacturing and trading, gaining foundational experience in commerce and operations.",
+        body: "Manish Mohanlal Mittal is a Commerce Graduate from the <span class=\"hl\">prestigious H.R. College of Commerce and Economics, University of Mumbai</span>. During his formative years, he was actively involved in the traditional family business of cloth manufacturing and trading, gaining foundational experience in commerce and operations.",
       },
       {
         heading: "Shail Foods & Harbilas Beriwala Tenets LLP",
@@ -27,7 +28,7 @@ const TEAM = [
       },
       {
         heading: "Strategic Leadership",
-        body: "With <span class=\"hl\">over 30 years of business experience</span> spanning manufacturing, trading, and investment management, Manish brings <span class=\"hl\">deep operational knowledge and strategic financial insight</span> to BeriCo Research LLP. His long-term perspective informs the family's capital allocation and advisory philosophy.",
+        body: "With <span class=\"hl\">over 30 years of business experience</span> spanning manufacturing, trading, and investment management, Manish brings deep operational knowledge and strategic financial insight to BeriCo Research LLP. His long-term perspective informs the family's capital allocation and advisory philosophy.",
       },
     ],
   },
@@ -65,7 +66,7 @@ const TEAM = [
       },
       {
         heading: "Professional Growth",
-        body: "Promoted to lead a <span class=\"hl\">team of 12 designers</span> as Senior Executive Designer, Kritika worked on a portfolio of <span class=\"hl\">ultra-luxury residential and commercial projects</span>. Her work is defined by meticulous attention to detail, spatial intelligence, and a commitment to client-centric design.",
+        body: "Promoted to lead a team of 12 designers as Senior Executive Designer, Kritika worked on a portfolio of <span class=\"hl\">ultra-luxury residential and commercial projects</span>. Her work is defined by meticulous attention to detail, spatial intelligence, and a commitment to client-centric design.",
       },
       {
         heading: "Studio Unnamedd",
@@ -91,7 +92,7 @@ export default function AboutPage() {
       {/* Family intro */}
       <section className="section-padding bg-[var(--surface)]">
         <div className="container-content">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto section-intro">
             <MotionReveal>
               <div className="divider mx-auto mb-8" />
               <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
@@ -108,13 +109,8 @@ export default function AboutPage() {
       {/* Team bios */}
       <section aria-labelledby="team-heading" className="section-padding bg-[var(--background)]">
         <div className="container-content">
-          <MotionReveal className="mb-20">
-            <div className="flex items-center gap-4 mb-5">
-              <div className="h-px w-12 bg-[var(--accent)]" />
-              <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-                The Family
-              </span>
-            </div>
+          <MotionReveal className="mb-20 section-intro">
+            <SectionEyebrow>The Family</SectionEyebrow>
             <h2
               id="team-heading"
               className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)]"
@@ -128,7 +124,7 @@ export default function AboutPage() {
               <MotionReveal key={member.name} delay={0.05 * mi}>
                 <article className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-20">
                   {/* Sidebar */}
-                  <div className="flex flex-col items-start">
+                  <div className="flex flex-col items-center text-center profile-block team-sidebar">
                     <div
                       className="w-44 h-44 rounded-full overflow-hidden border-2 border-[var(--border)] mb-6"
                       aria-hidden="true"
@@ -160,15 +156,15 @@ export default function AboutPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 team-content">
                     {member.sections.map((section, si) => (
                       <MotionReveal key={section.heading} delay={0.08 * si} className={si === 2 ? "md:col-span-2" : ""}>
-                        <div className="border-t border-[var(--border)] pt-6">
+                        <div className="border-t border-[var(--border)] pt-6 subsection-block">
                           <h4 className="font-body text-xs uppercase tracking-[0.18em] font-semibold text-[var(--text-secondary)] mb-4">
                             {section.heading}
                           </h4>
                           <p
-                            className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light"
+                            className="font-body text-base text-justify-block text-[var(--text-secondary)] leading-relaxed font-light"
                             dangerouslySetInnerHTML={{ __html: section.body }}
                           />
                         </div>
@@ -185,13 +181,8 @@ export default function AboutPage() {
       {/* Values */}
       <section aria-labelledby="values-heading" className="section-padding bg-[var(--surface)]">
         <div className="container-content">
-          <MotionReveal className="max-w-xl mb-16">
-            <div className="flex items-center gap-4 mb-5">
-              <div className="h-px w-12 bg-[var(--accent)]" />
-              <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-                Our Values
-              </span>
-            </div>
+          <MotionReveal className="section-intro max-w-xl mb-16 mx-auto">
+            <SectionEyebrow>Our Values</SectionEyebrow>
             <h2
               id="values-heading"
               className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight text-[var(--text-primary)]"
@@ -210,12 +201,12 @@ export default function AboutPage() {
               { title: "Stewardship", desc: "Responsible custodianship of capital, relationships, and reputation." },
             ].map((v, i) => (
               <MotionReveal key={v.title} delay={0.07 * i}>
-                <div className="border border-[var(--border)] p-8 hover:border-[var(--accent)] transition-colors duration-300 group">
-                  <div className="w-8 h-px bg-[var(--accent)] mb-5 group-hover:w-16 transition-all duration-500" />
+                <div className="border border-[var(--border)] p-8 hover:border-[var(--accent)] transition-colors duration-300 group feature-card flex flex-col">
+                  <div className="w-8 h-px bg-[var(--accent)] mb-5 group-hover:w-16 transition-all duration-500 mx-auto" />
                   <h3 className="font-heading text-xl font-semibold text-[var(--text-primary)] mb-3">
                     {v.title}
                   </h3>
-                  <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+                  <p className="font-body text-sm text-justify-block text-[var(--text-secondary)] leading-relaxed font-light text-balance">
                     {v.desc}
                   </p>
                 </div>

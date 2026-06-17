@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import MotionReveal from "@/components/motion-reveal";
 import PageHero from "@/components/page-hero";
 import { TrendingUp, BarChart2, Briefcase, Building2, Shield, Search } from "lucide-react";
@@ -9,12 +10,21 @@ export const metadata: Metadata = {
       "BeriCo Research LLP offers family office management, financial consulting, strategic advisory, business consulting, family office management, and investment stewardship.",
 };
 
-const SERVICES = [
+const SERVICES: {
+  icon: typeof TrendingUp;
+  title: string;
+  description: ReactNode;
+  points: string[];
+}[] = [
   {
     icon: TrendingUp,
     title: "Family Offices",
-    description:
-      "We manage the family's investment portfolio with a disciplined, long-horizon philosophy. Our approach focuses on capital preservation, consistent growth, and strategic allocation across diversified asset classes — including equities, fixed income, and carefully selected alternatives.",
+    description: (
+      <>
+        We manage the family&apos;s investment portfolio with a disciplined,{" "}
+        <span className="hl">long-horizon philosophy</span>. Our approach focuses on capital preservation, consistent growth, and strategic allocation across diversified asset classes — including equities, fixed income, and carefully selected alternatives.
+      </>
+    ),
     points: [
       "Portfolio strategy and asset allocation",
       "Stock market investment management",
@@ -25,8 +35,11 @@ const SERVICES = [
   {
     icon: BarChart2,
     title: "Financial Consulting",
-    description:
-      "Drawing on decades of hands-on business and financial management, we provide informed financial guidance that is grounded in real-world experience. Our consulting engagements are characterised by clarity, candour, and a focus on sustainable outcomes.",
+    description: (
+      <>
+        Drawing on <span className="hl">decades of hands-on business and financial management</span>, we provide informed financial guidance that is grounded in real-world experience. Our consulting engagements are characterised by clarity, candour, and a focus on sustainable outcomes.
+      </>
+    ),
     points: [
       "Financial planning and forecasting",
       "Cash flow and treasury management",
@@ -37,8 +50,11 @@ const SERVICES = [
   {
     icon: Briefcase,
     title: "Strategic Advisory",
-    description:
-      "Our strategic advisory services draw on over 30 years of business building, operational management, and sector-specific expertise. We provide counsel that is rooted in practicality and oriented toward lasting results.",
+    description: (
+      <>
+        Our strategic advisory services draw on <span className="hl">over 30 years of business building</span>, operational management, and sector-specific expertise. We provide counsel that is rooted in practicality and oriented toward lasting results.
+      </>
+    ),
     points: [
       "Business strategy and growth advisory",
       "Operational improvement",
@@ -49,8 +65,11 @@ const SERVICES = [
   {
     icon: Search,
     title: "Business Consulting",
-    description:
-      "We assist family-owned businesses and closely held enterprises with the operational and structural challenges unique to their context. Our perspective is informed by our own founding and management of successful business ventures.",
+    description: (
+      <>
+        We assist family-owned businesses and closely held enterprises with the operational and structural challenges unique to their context. Our perspective is informed by our own founding and management of <span className="hl">successful business ventures</span>.
+      </>
+    ),
     points: [
       "Business model review and optimisation",
       "Operational systems and processes",
@@ -61,8 +80,11 @@ const SERVICES = [
   {
     icon: Building2,
     title: "Family Office Management",
-    description:
-      "BeriCo Research LLP provides comprehensive family office management services — coordinating investment activities, financial reporting, compliance oversight, and long-term legacy planning in a structured, professional framework.",
+    description: (
+      <>
+        BeriCo Research LLP provides comprehensive family office management services — coordinating investment activities, financial reporting, compliance oversight, and <span className="hl">long-term legacy planning</span> in a structured, professional framework.
+      </>
+    ),
     points: [
       "Family office governance and structure",
       "Consolidated financial reporting",
@@ -73,8 +95,11 @@ const SERVICES = [
   {
     icon: Shield,
     title: "Investment Stewardship",
-    description:
-      "Responsible stewardship of capital is central to our philosophy. We go beyond simple returns to consider the long-term sustainability, quality, and integrity of every investment decision — ensuring that capital is deployed with care and conviction.",
+    description: (
+      <>
+        <span className="hl">Responsible stewardship of capital</span> is central to our philosophy. We go beyond simple returns to consider the long-term sustainability, quality, and integrity of every investment decision — ensuring that capital is deployed with care and conviction.
+      </>
+    ),
     points: [
       "Responsible investment principles",
       "ESG-aligned investment consideration",
@@ -102,10 +127,9 @@ export default function ServicesPage() {
               const Icon = service.icon;
               return (
                 <MotionReveal key={service.title} delay={0.07 * (i % 3)}>
-                  <article className="group bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-500 p-10 flex flex-col h-full">
-                    {/* Icon */}
+                  <article className="group bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-500 p-10 flex flex-col h-full feature-card">
                     <div
-                      className="w-14 h-14 border border-[var(--border)] group-hover:border-[var(--accent)] flex items-center justify-center mb-8 transition-all duration-500"
+                      className="service-card-icon w-14 h-14 border border-[var(--border)] group-hover:border-[var(--accent)] flex items-center justify-center mb-8 transition-all duration-500 mx-auto"
                       aria-hidden="true"
                     >
                       <Icon
@@ -121,14 +145,14 @@ export default function ServicesPage() {
                     </h3>
 
                     {/* Description */}
-                    <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed font-light mb-8">
+                    <p className="font-body text-sm leading-relaxed text-justify-block text-[var(--text-secondary)] font-light mb-8 text-balance">
                       {service.description}
                     </p>
 
                     {/* Points */}
-                    <ul className="flex flex-col gap-3 mt-auto" role="list">
+                    <ul className="flex flex-col gap-3 mt-auto feature-list" role="list">
                       {service.points.map((pt) => (
-                        <li key={pt} className="flex items-start gap-3">
+                        <li key={pt} className="flex mobile-icon-stack items-start gap-3">
                           <div className="w-px h-4 bg-[var(--accent)] shrink-0 mt-1" aria-hidden="true" />
                           <span className="font-body text-xs text-[var(--text-secondary)] leading-relaxed">
                             {pt}
@@ -148,8 +172,8 @@ export default function ServicesPage() {
       <section className="py-12 bg-[var(--surface)] border-t border-[var(--border)]">
         <div className="container-content">
           <MotionReveal>
-            <div className="max-w-2xl mx-auto text-center">
-              <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed italic">
+            <div className="max-w-2xl mx-auto section-intro">
+              <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed italic text-center">
                 BeriCo Research LLP is a Family Office, Finance &amp; Consulting firm.
                 We do not advise the general public and do not solicit investments or finance from the public.
                 All services are conducted on a private, family basis.

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import SectionEyebrow from "@/components/section-eyebrow";
 
 const TIMELINE_ENTRIES = [
   {
@@ -62,7 +63,7 @@ function TimelineEntry({
         initial={{ opacity: 0, x: -24 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.05 * index, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`text-right ${isEven ? "block" : "invisible"}`}
+        className={isEven ? "block" : "invisible"}
         aria-hidden={!isEven}
       >
         <div className="inline-block bg-[var(--surface)] border border-[var(--border)] p-6 hover:border-[var(--accent)] transition-colors duration-300 group">
@@ -72,7 +73,7 @@ function TimelineEntry({
           <h3 className="font-heading text-lg font-semibold text-[var(--text-primary)] mb-2">
             {entry.title}
           </h3>
-          <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed font-light max-w-xs ml-auto">
+          <p className="font-body text-sm text-justify-block text-[var(--text-secondary)] leading-relaxed font-light max-w-xs">
             {entry.description}
           </p>
         </div>
@@ -97,7 +98,7 @@ function TimelineEntry({
         initial={{ opacity: 0, x: 24 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.05 * index, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`text-left ${!isEven ? "block" : "invisible"}`}
+        className={!isEven ? "block" : "invisible"}
         aria-hidden={isEven}
       >
         <div className="inline-block bg-[var(--surface)] border border-[var(--border)] p-6 hover:border-[var(--accent)] transition-colors duration-300 group">
@@ -107,7 +108,7 @@ function TimelineEntry({
           <h3 className="font-heading text-lg font-semibold text-[var(--text-primary)] mb-2">
             {entry.title}
           </h3>
-          <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed font-light max-w-xs">
+          <p className="font-body text-sm text-justify-block text-[var(--text-secondary)] leading-relaxed font-light max-w-xs">
             {entry.description}
           </p>
         </div>
@@ -169,7 +170,7 @@ function MobileTimelineEntry({
         <h3 className="font-heading text-lg font-semibold text-[var(--text-primary)] mb-2">
           {entry.title}
         </h3>
-        <p className="font-body text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+        <p className="font-body text-sm text-justify-block text-[var(--text-secondary)] leading-relaxed font-light">
           {entry.description}
         </p>
       </motion.div>
@@ -185,14 +186,10 @@ export default function LegacyTimeline() {
     >
       <div className="container-content">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="flex items-center justify-center gap-4 mb-5">
-            <div className="h-px w-12 bg-[var(--accent)]" />
-            <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-              Our Legacy
-            </span>
-            <div className="h-px w-12 bg-[var(--accent)]" />
-          </div>
+        <div className="text-center mb-12 md:mb-20">
+          <SectionEyebrow symmetric className="justify-center">
+            Our Legacy
+          </SectionEyebrow>
           <h2
             id="timeline-heading"
             className="font-heading text-[clamp(1.875rem,4vw,3rem)] font-semibold leading-tight tracking-[-0.01em] text-[var(--text-primary)]"
@@ -214,7 +211,7 @@ export default function LegacyTimeline() {
         </div>
 
         {/* Mobile Timeline */}
-        <div className="md:hidden">
+        <div className="md:hidden legacy-timeline">
           <MobileTimeline />
         </div>
       </div>

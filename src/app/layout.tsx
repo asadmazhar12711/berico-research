@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import FloatingContactActions from "@/components/floating-contact-actions";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -81,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`dark ${playfair.variable} ${inter.variable}`}>
       <head>
         <link rel="canonical" href="https://BeriCoresearch.co.in" />
         <script
@@ -94,7 +95,7 @@ export default function RootLayout({
               description:
                 "A Family Office, Finance & Consulting firm based in Gurgaon, Haryana.",
               url: "https://BeriCoresearch.co.in",
-              email: "BeriCoresearch@gmail.com",
+              email: "bericoresearch@gmail.com",
               telephone: "+91-9650510232",
               address: {
                 "@type": "PostalAddress",
@@ -108,7 +109,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+91-9650510232",
                 contactType: "general",
-                email: "BeriCoresearch@gmail.com",
+                email: "bericoresearch@gmail.com",
               },
               sameAs: [],
             }),
@@ -118,13 +119,14 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
-          storageKey="BeriCo-theme-v2"
+          storageKey="BeriCo-theme-v3"
         >
           <Navbar />
-          <main id="main-content">{children}</main>
+          <main id="main-content" className="mobile-site">{children}</main>
           <Footer />
+          <FloatingContactActions />
         </ThemeProvider>
       </body>
     </html>

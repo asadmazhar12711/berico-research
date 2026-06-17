@@ -47,6 +47,34 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  p,
+  address {
+    text-align: left;
+    text-wrap: pretty;
+    line-height: 1.6;
+    hyphens: none;
+    word-spacing: normal;
+  }
+
+  /* Narrow blocks — never stretch line spacing */
+  p.max-w-xs,
+  p.max-w-sm,
+  p.max-w-md,
+  p.max-w-lg,
+  p.max-w-xl,
+  address.max-w-xs,
+  address.max-w-sm {
+    text-align: left;
+    hyphens: none;
+  }
+
+  /* Keep centered UI blocks (404, form success, admin) unchanged */
+  .text-center p,
+  .text-center address {
+    text-align: center;
+    hyphens: none;
+  }
+
   ::selection {
     background-color: rgba(var(--accent-rgb), 0.2);
     color: var(--text-primary);
@@ -77,6 +105,472 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* ── Intelligent alignment (all breakpoints) ── */
+
+  /* Eyebrows, titles, short leads, CTAs */
+  .section-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-intro h1,
+  .section-intro h2,
+  .section-intro h3,
+  .section-intro h4,
+  .section-intro p,
+  .section-intro .text-justify-block {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Long copy: narrow centered column, left-aligned lines (readability) */
+  .reading-column {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .reading-column p,
+  .reading-column .text-justify-block,
+  .reading-column li span {
+    text-align: left;
+  }
+
+  /* Grid subsections: centered heading, left body */
+  .subsection-block {
+    text-align: center;
+  }
+
+  .subsection-block p,
+  .subsection-block .text-justify-block {
+    text-align: left;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Cards, pillars, service tiles */
+  .feature-card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .feature-card .text-justify-block,
+  .feature-card .text-pillar-desc {
+    text-align: center;
+  }
+
+  /* Profile photo + name blocks */
+  .profile-block {
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Icon-left contact rows — scannable, stays left */
+  .contact-details {
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .contact-details .mobile-icon-stack {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .contact-details .mobile-icon-stack > div,
+    .contact-details .mobile-icon-stack a,
+    .contact-details .mobile-icon-stack p,
+    .contact-details .mobile-icon-stack address {
+      text-align: left;
+    }
+  }
+
+  /* Bullet lists inside centered cards */
+  .feature-list {
+    width: 100%;
+    text-align: left;
+  }
+
+  .feature-list .mobile-icon-stack {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .feature-list li span {
+    text-align: left;
+  }
+
+  /* ── Desktop-only alignment (lg+) — mobile unchanged ── */
+  @media (min-width: 1024px) {
+    .feature-card .card-head {
+      width: 100%;
+      text-align: center;
+    }
+
+    .feature-card .card-head p {
+      text-align: center;
+    }
+
+    .footer-link-col {
+      align-items: flex-start !important;
+      text-align: left;
+    }
+
+    .footer-link-col h3,
+    .footer-link-col ul,
+    .footer-link-col li {
+      text-align: left;
+    }
+
+    .footer-link-col ul {
+      align-items: flex-start !important;
+    }
+
+    .footer-link-col a {
+      text-align: left;
+    }
+
+    .team-content .subsection-block h4 {
+      text-align: left;
+    }
+
+    .team-content .subsection-block,
+    .team-content .subsection-block h4,
+    .team-content .subsection-block p,
+    .team-content .subsection-block .text-justify-block {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+    }
+
+    .profile-block .profile-tagline {
+      text-align: center !important;
+      width: 100%;
+    }
+
+    .profile-highlights {
+      align-self: stretch;
+      width: 100%;
+      text-align: left;
+    }
+
+    .profile-highlights h4 {
+      text-align: left;
+    }
+
+    .contact-info-col.section-intro h2,
+    .contact-info-col.section-intro p {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .contact-info-col .contact-details {
+      align-items: flex-start;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+    }
+
+    .disclaimer-content,
+    .disclaimer-content .disclaimer-callout,
+    .disclaimer-content .disclaimer-callout h2,
+    .disclaimer-content .disclaimer-callout p,
+    .disclaimer-content .disclaimer-clause,
+    .disclaimer-content .disclaimer-clause h3,
+    .disclaimer-content .disclaimer-clause p {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: none;
+    }
+  }
+
+  /* Forms — labels/inputs left for usability */
+  .contact-form-shell,
+  .contact-form-shell form,
+  .contact-form-shell label,
+  .contact-form-shell input,
+  .contact-form-shell textarea {
+    text-align: left;
+  }
+
+  /* Legacy timeline — never center */
+  .legacy-timeline,
+  .legacy-timeline * {
+    text-align: left !important;
+  }
+
+  /* Body copy — left-aligned, natural word spacing (no justify gaps) */
+  .text-justify-block {
+    text-align: left;
+    text-wrap: pretty;
+    hyphens: none;
+    word-spacing: normal;
+  }
+
+  /* Who We Are pillar descriptions — balanced 2-line wraps on mobile */
+  .text-pillar-desc {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+
+  /* Footer disclaimer — balanced lines, even spacing */
+  .text-footer-disclaimer {
+    max-width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    text-wrap: balance;
+    word-spacing: normal;
+  }
+
+  @media (min-width: 640px) {
+    .text-footer-disclaimer {
+      max-width: 20rem;
+    }
+  }
+
+  /* Contact form — mobile-friendly layout */
+  .contact-form-shell {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .contact-form-field {
+    width: 100%;
+  }
+
+  @media (max-width: 639px) {
+    .contact-form-shell input,
+    .contact-form-shell textarea {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Mobile: center section copy (exclude legacy timeline body via .legacy-timeline) */
+  @media (max-width: 639px) {
+    /* Sitewide — all public pages via .mobile-site on <main> */
+    .mobile-site section:not(:has(.legacy-timeline)) {
+      text-align: center;
+    }
+
+    .mobile-site section:not(:has(.legacy-timeline)) h1,
+    .mobile-site section:not(:has(.legacy-timeline)) h2,
+    .mobile-site section:not(:has(.legacy-timeline)) h3,
+    .mobile-site section:not(:has(.legacy-timeline)) h4,
+    .mobile-site section:not(:has(.legacy-timeline)) p,
+    .mobile-site section:not(:has(.legacy-timeline)) address,
+    .mobile-site section:not(:has(.legacy-timeline)) .text-justify-block,
+    .mobile-site article {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mobile-site article .text-justify-block {
+      text-align: center;
+      text-align-last: center;
+    }
+
+    /* Card / block icons — center above copy */
+    .mobile-site article > div[aria-hidden="true"]:first-of-type,
+    .mobile-site .service-card-icon {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Icon-left rows → stack icon on top (sections only, not nav) */
+    .mobile-site section .flex.items-start.gap-3,
+    .mobile-site section .flex.items-start.gap-4,
+    .mobile-site section .flex.items-start.gap-5,
+    .mobile-site section li.flex.items-start {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mobile-site section .flex.items-start.gap-3 > div,
+    .mobile-site section .flex.items-start.gap-4 > div,
+    .mobile-site section .flex.items-start.gap-5 > div,
+    .mobile-site section li.flex.items-start > div {
+      text-align: center;
+    }
+
+    .mobile-site section .flex.items-start.gap-3 span,
+    .mobile-site section .flex.items-start.gap-4 span,
+    .mobile-site section .flex.items-start.gap-5 span,
+    .mobile-site section li.flex.items-start span {
+      text-align: center;
+    }
+
+    .mobile-site section li.flex.items-start > .w-px,
+    .mobile-site .mobile-icon-stack > .w-px {
+      width: 2rem;
+      height: 1px;
+      margin-top: 0;
+    }
+
+    /* Profile columns */
+    .mobile-site .leader-profile,
+    .mobile-site .team-sidebar {
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Contact form — fully centered on mobile */
+    .mobile-site .contact-form-shell,
+    .mobile-site .contact-form-shell form,
+    .mobile-site section .contact-form-shell h2,
+    .mobile-site section .contact-form-shell h3,
+    .mobile-site section .contact-form-shell label,
+    .mobile-site section .contact-form-shell input,
+    .mobile-site section .contact-form-shell textarea,
+    .mobile-site section .contact-form-shell form p {
+      text-align: center;
+    }
+
+    .mobile-site .contact-form-shell .contact-form-header,
+    .mobile-site .contact-form-shell .contact-form-intro {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mobile-site .contact-form-shell .contact-form-intro {
+      text-wrap: pretty;
+      max-width: 20rem;
+    }
+
+    .mobile-site .contact-form-shell form {
+      width: 100%;
+    }
+
+    .mobile-site .contact-form-shell .contact-form-field {
+      text-align: center;
+    }
+
+    .mobile-site .contact-form-shell .contact-form-error {
+      justify-content: center;
+    }
+
+    .mobile-site .contact-form-submit {
+      width: 100%;
+    }
+
+    .mobile-center {
+      text-align: center;
+    }
+
+    .mobile-center h1,
+    .mobile-center h2,
+    .mobile-center h3,
+    .mobile-center p,
+    .mobile-center address {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mobile-center .text-justify-block {
+      text-align: center;
+      text-align-last: center;
+    }
+
+    .mobile-center-actions {
+      align-items: center;
+    }
+
+    /* Icon above text when center-aligned on mobile */
+    .mobile-icon-stack {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mobile-icon-stack address,
+    .mobile-icon-stack a,
+    .mobile-icon-stack p {
+      text-align: center;
+    }
+
+    .mobile-icon-stack > div {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .mobile-site .contact-form-shell,
+    .mobile-site .contact-form-shell form,
+    .mobile-site .contact-form-shell .contact-form-header,
+    .mobile-site .contact-form-shell .contact-form-header h2,
+    .mobile-site .contact-form-shell .contact-form-intro,
+    .mobile-site section .contact-form-shell label,
+    .mobile-site section .contact-form-shell input,
+    .mobile-site section .contact-form-shell textarea,
+    .mobile-site section .contact-form-shell form p {
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+    }
+
+    .mobile-site .contact-form-shell .contact-form-field {
+      text-align: left;
+    }
+
+    .mobile-site .contact-form-shell .contact-form-error {
+      justify-content: flex-start;
+    }
+
+    .mobile-site .contact-form-submit {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .mobile-icon-stack {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .mobile-icon-stack address,
+    .mobile-icon-stack a,
+    .mobile-icon-stack p,
+    .mobile-icon-stack > div {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 639px) {
+    /* Our Legacy timeline — never center */
+    .legacy-timeline,
+    .legacy-timeline * {
+      text-align: left !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .legacy-timeline .flex {
+      flex-direction: row !important;
+      align-items: flex-start !important;
+    }
+
+    .legacy-timeline li.flex.items-start > .w-px {
+      width: 1px;
+      height: 1rem;
+    }
   }
 
   .section-padding {
@@ -143,10 +637,15 @@
     font-weight: 500 !important;
   }
 
-  /* Highlight: bold italic for USP phrases */
+  /* Tighter body copy */
+  .leading-relaxed {
+    line-height: 1.6 !important;
+  }
+
+  /* USP highlight — accent color, one phrase per block max */
   .hl {
-    font-weight: 700;
-    font-style: italic;
+    color: var(--accent);
+    font-weight: 600;
   }
 
   /* Minimum text size — no text smaller than text-sm equivalent */

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import MotionReveal from "@/components/motion-reveal";
+import SectionEyebrow from "@/components/section-eyebrow";
 import { ArrowRight } from "lucide-react";
 
 export default function ContactSection() {
@@ -11,7 +12,7 @@ export default function ContactSection() {
       className="section-padding bg-[var(--background)]"
     >
       <div className="container-content">
-        <div className="border border-[var(--border)] p-12 md:p-20 flex flex-col md:flex-row md:items-center justify-between gap-10 relative overflow-hidden">
+        <div className="border border-[var(--border)] p-12 md:p-20 flex flex-col items-center text-center gap-10 relative overflow-hidden section-intro">
           {/* Subtle bg pattern */}
           <div
             className="absolute inset-0 opacity-[0.025]"
@@ -23,13 +24,8 @@ export default function ContactSection() {
             }}
           />
 
-          <MotionReveal className="relative z-10 max-w-xl">
-            <div className="flex items-center gap-4 mb-5">
-              <div className="h-px w-12 bg-[var(--accent)]" />
-              <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-                Get in Touch
-              </span>
-            </div>
+          <MotionReveal className="relative z-10 max-w-xl mx-auto section-intro">
+            <SectionEyebrow>Get in Touch</SectionEyebrow>
             <h2
               id="contact-cta-heading"
               className="font-heading text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold leading-tight text-[var(--text-primary)] mb-4"
@@ -39,7 +35,8 @@ export default function ContactSection() {
             </h2>
             <p className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light">
               For enquiries, introductions, or further information about BeriCo Research LLP,
-              we welcome your correspondence.
+              we welcome your correspondence with{" "}
+              <span className="hl">strict confidentiality</span>.
             </p>
           </MotionReveal>
 

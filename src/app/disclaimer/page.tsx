@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import MotionReveal from "@/components/motion-reveal";
 import { ShieldCheck } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -20,37 +21,33 @@ export default function DisclaimerPage() {
 
       <section aria-labelledby="disclaimer-content" className="section-padding bg-[var(--background)]">
         <div className="container-content">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto disclaimer-content">
             {/* Primary disclaimer */}
             <MotionReveal>
-              <div className="border border-[var(--accent)] p-10 md:p-14 mb-16 relative">
+              <div className="border border-[var(--accent)] p-10 md:p-14 mb-16 relative section-intro disclaimer-callout">
                 <div
                   className="absolute top-0 left-0 w-full h-1 bg-[var(--accent)]"
                   aria-hidden="true"
                 />
-                <div className="flex items-start gap-5">
-                  <ShieldCheck
-                    size={32}
-                    strokeWidth={1.25}
-                    className="text-[var(--accent)] shrink-0 mt-1"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h2
-                      id="disclaimer-content"
-                      className="font-heading text-2xl font-semibold text-[var(--text-primary)] mb-4"
-                    >
-                      Nature of Business
-                    </h2>
-                    <p className="font-body text-lg text-[var(--text-primary)] leading-relaxed font-light">
-                      We are a Family Office, Finance &amp; Consulting firm.
-                    </p>
-                    <p className="font-body text-lg text-[var(--text-primary)] leading-relaxed font-light mt-3">
-                      We do not advise the general public and do not solicit investments or
-                      finance from the public.
-                    </p>
-                  </div>
-                </div>
+                <ShieldCheck
+                  size={32}
+                  strokeWidth={1.25}
+                  className="text-[var(--accent)] shrink-0 mx-auto mb-5"
+                  aria-hidden="true"
+                />
+                <h2
+                  id="disclaimer-content"
+                  className="font-heading text-2xl font-semibold text-[var(--text-primary)] mb-4"
+                >
+                  Nature of Business
+                </h2>
+                <p className="font-body text-lg text-[var(--text-primary)] leading-relaxed font-light">
+                  We are a Family Office, Finance &amp; Consulting firm.
+                </p>
+                <p className="font-body text-lg text-[var(--text-primary)] leading-relaxed font-light mt-3">
+                  We do not advise the general public and do not solicit investments or
+                  finance from the public.
+                </p>
               </div>
             </MotionReveal>
 
@@ -80,11 +77,23 @@ export default function DisclaimerPage() {
                   },
                   {
                     heading: "Contact",
-                    body: "If you have any questions regarding this disclaimer or the nature of our operations, please contact us at BeriCoresearch@gmail.com.",
+                    body: (
+                      <>
+                        If you have any questions regarding this disclaimer or the nature of our operations,
+                        please contact us at{" "}
+                        <a
+                          href={CONTACT_MAILTO}
+                          className="text-[var(--accent)] hover:underline"
+                        >
+                          {CONTACT_EMAIL}
+                        </a>
+                        .
+                      </>
+                    ),
                   },
                 ].map((clause, i) => (
                   <MotionReveal key={clause.heading} delay={0.06 * i}>
-                    <div className="border-t border-[var(--border)] pt-8">
+                  <div className="border-t border-[var(--border)] pt-8 disclaimer-clause">
                       <h3 className="font-body text-xs uppercase tracking-[0.18em] font-semibold text-[var(--accent)] mb-4">
                         {clause.heading}
                       </h3>

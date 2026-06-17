@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionEyebrow from "@/components/section-eyebrow";
 
 interface PageHeroProps {
   eyebrow: string;
@@ -12,9 +13,8 @@ export default function PageHero({ eyebrow, title, subtitle }: PageHeroProps) {
   return (
     <section
       aria-label={`${eyebrow} hero`}
-      className="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden"
+      className="relative pt-[6.5rem] pb-16 lg:pt-48 lg:pb-28 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <svg className="absolute inset-0 w-full h-full opacity-[0.035] dark:opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -38,18 +38,14 @@ export default function PageHero({ eyebrow, title, subtitle }: PageHeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="section-intro max-w-3xl mx-auto"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-[var(--accent)]" />
-            <span className="font-body text-xs tracking-[0.25em] uppercase text-[var(--accent)] font-medium">
-              {eyebrow}
-            </span>
-          </div>
-          <h1 className="font-heading text-[clamp(2rem,5vw,4rem)] font-semibold leading-tight tracking-[-0.02em] text-[var(--text-primary)] max-w-3xl mb-6">
+          <SectionEyebrow>{eyebrow}</SectionEyebrow>
+          <h1 className="font-heading text-[clamp(2rem,5vw,4rem)] font-semibold leading-tight tracking-[-0.02em] text-[var(--text-primary)] mb-6">
             {title}
           </h1>
           {subtitle && (
-            <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl font-light">
+            <p className="font-body text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto font-light">
               {subtitle}
             </p>
           )}

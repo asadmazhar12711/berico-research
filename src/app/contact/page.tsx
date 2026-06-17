@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import ContactForm from "@/components/contact-form";
 import MotionReveal from "@/components/motion-reveal";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  CONTACT_MAPS_URL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  CONTACT_WHATSAPP,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,28 +20,36 @@ export const metadata: Metadata = {
 
 const CONTACT_ITEMS = [
   {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "Message us on WhatsApp",
+    href: CONTACT_WHATSAPP,
+    external: true,
+  },
+  {
     icon: Phone,
     label: "Phone",
-    value: "+91 96505 10232",
-    href: "tel:+919650510232",
+    value: CONTACT_PHONE_DISPLAY,
+    href: CONTACT_PHONE_TEL,
   },
   {
     icon: Mail,
     label: "Email",
-    value: "BeriCoresearch@gmail.com",
-    href: "mailto:BeriCoresearch@gmail.com",
+    value: CONTACT_EMAIL,
+    href: CONTACT_MAILTO,
   },
   {
     icon: MapPin,
     label: "Address",
     value: "A-436, 4th Floor, VentureX, Sector-67, Landmark Cyber Park, Gurgaon, Haryana – 122102",
-    href: "https://maps.google.com/?q=VentureX+Sector+67+Gurgaon",
+    href: CONTACT_MAPS_URL,
+    external: true,
   },
   {
     icon: Clock,
     label: "Availability",
     value: "By appointment. Please write to us to schedule a conversation.",
-    href: undefined,
+    href: CONTACT_MAILTO,
   },
 ];
 
@@ -48,10 +64,10 @@ export default function ContactPage() {
 
       <section aria-labelledby="contact-details" className="section-padding bg-[var(--background)]">
         <div className="container-content">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
             {/* Contact info */}
-            <div>
-              <MotionReveal className="mb-12">
+            <div className="w-full min-w-0 contact-info-col">
+              <MotionReveal className="mb-12 section-intro">
                 <h2
                   id="contact-details"
                   className="font-heading text-2xl font-semibold text-[var(--text-primary)] mb-4"
@@ -59,17 +75,18 @@ export default function ContactPage() {
                   Get in touch
                 </h2>
                 <p className="font-body text-base text-[var(--text-secondary)] leading-relaxed font-light">
-                  For enquiries, introductions, or further information, we welcome your correspondence.
+                  For enquiries, introductions, or further information, we welcome your correspondence with{" "}
+                  <span className="hl">strict confidentiality</span>.
                   Please use the details below or complete the contact form.
                 </p>
               </MotionReveal>
 
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-8 items-center lg:items-start contact-details w-full max-w-md mx-auto lg:mx-0 lg:max-w-none">
                 {CONTACT_ITEMS.map((item, i) => {
                   const Icon = item.icon;
                   return (
                     <MotionReveal key={item.label} delay={0.08 * i}>
-                      <div className="flex items-start gap-5 group">
+                      <div className="flex mobile-icon-stack gap-5 group w-full max-w-sm md:max-w-none">
                         <div className="w-12 h-12 border border-[var(--border)] flex items-center justify-center shrink-0 group-hover:border-[var(--accent)] transition-colors duration-300">
                           <Icon size={18} strokeWidth={1.25} className="text-[var(--accent)]" />
                         </div>
@@ -80,8 +97,8 @@ export default function ContactPage() {
                           {item.href ? (
                             <a
                               href={item.href}
-                              target={item.href.startsWith("http") ? "_blank" : undefined}
-                              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                              target={"external" in item && item.external ? "_blank" : undefined}
+                              rel={"external" in item && item.external ? "noopener noreferrer" : undefined}
                               className="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300 leading-relaxed"
                             >
                               {item.value}
@@ -116,7 +133,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact form */}
-            <MotionReveal delay={0.1} direction="right">
+            <MotionReveal delay={0.1} direction="right" className="w-full min-w-0">
               <ContactForm />
             </MotionReveal>
           </div>
