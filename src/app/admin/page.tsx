@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setId(e.target.value)}
                 placeholder="admin@example.com"
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-[#E5E5E5] bg-[#F9F9F9] text-sm text-[#000] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:border-transparent transition"
+                className="w-full px-4 py-2.5 rounded-lg border border-[#E5E5E5] bg-[#F9F9F9] text-sm text-[#000] focus:outline-none focus:ring-2 focus:ring-[#2A75D8] focus:border-transparent transition"
               />
             </div>
             <div>
@@ -74,7 +74,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-[#E5E5E5] bg-[#F9F9F9] text-sm text-[#000] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] focus:border-transparent transition"
+                className="w-full px-4 py-2.5 rounded-lg border border-[#E5E5E5] bg-[#F9F9F9] text-sm text-[#000] focus:outline-none focus:ring-2 focus:ring-[#2A75D8] focus:border-transparent transition"
               />
             </div>
 
@@ -87,7 +87,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 rounded-lg bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-2.5 rounded-lg bg-[#2A75D8] hover:bg-[#1F5FB8] text-white text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? "Signing in…" : "Sign In"}
             </button>

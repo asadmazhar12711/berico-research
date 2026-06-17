@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Hero"
-      className="relative min-h-screen flex items-center justify-center overflow-x-hidden"
+      className="relative flex min-h-screen flex-col overflow-x-hidden"
       style={{ backgroundColor: "var(--background)" }}
     >
       {/* Abstract luxury background */}
@@ -42,7 +42,11 @@ export default function HeroSection() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-[var(--border)]" />
       </div>
 
-      <div className="container-content relative z-10 pt-[6.5rem] pb-20 lg:pt-44 lg:pb-28">
+      {/* Spacer reserves fixed-navbar height so centered content never rides
+          under it, even on short viewports. */}
+      <div aria-hidden="true" className="h-24 shrink-0 lg:h-32" />
+
+      <div className="container-content relative z-10 flex w-full flex-1 items-center justify-center py-12 lg:py-16">
         <div className="max-w-4xl mx-auto text-center section-intro">
           <motion.div
             initial={{ opacity: 0, y: 16 }}

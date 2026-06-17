@@ -128,11 +128,11 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <div className="bg-white rounded-xl border border-[#E5E5E5] p-5 shadow-sm">
             <p className="text-xs text-[#888] font-medium uppercase tracking-wider mb-1">Total Leads</p>
-            <p className="text-3xl font-bold text-[#0EA5E9]">{leads.length}</p>
+            <p className="text-3xl font-bold text-[#2A75D8]">{leads.length}</p>
           </div>
           <div className="bg-white rounded-xl border border-[#E5E5E5] p-5 shadow-sm">
             <p className="text-xs text-[#888] font-medium uppercase tracking-wider mb-1">Today</p>
-            <p className="text-3xl font-bold text-[#0EA5E9]">{todayCount}</p>
+            <p className="text-3xl font-bold text-[#2A75D8]">{todayCount}</p>
           </div>
           <div className="bg-white rounded-xl border border-[#E5E5E5] p-5 shadow-sm col-span-2 sm:col-span-1">
             <p className="text-xs text-[#888] font-medium uppercase tracking-wider mb-1">Latest</p>
@@ -160,10 +160,10 @@ export default function AdminDashboard() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search name, email, subject…"
-                  className="pl-9 pr-4 py-2 text-sm border border-[#E5E5E5] rounded-lg bg-[#F9F9F9] text-[#000] focus:outline-none focus:ring-2 focus:ring-[#0EA5E9] w-full sm:w-64 transition"
+                  className="pl-9 pr-4 py-2 text-sm border border-[#E5E5E5] rounded-lg bg-[#F9F9F9] text-[#000] focus:outline-none focus:ring-2 focus:ring-[#2A75D8] w-full sm:w-64 transition"
                 />
               </div>
-              <button onClick={load} className="p-2 rounded-lg border border-[#E5E5E5] hover:bg-[#F0F9FF] transition" title="Refresh">
+              <button onClick={load} className="p-2 rounded-lg border border-[#E5E5E5] hover:bg-[#F0F6FF] transition" title="Refresh">
                 <svg className="w-4 h-4 text-[#555]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
@@ -196,7 +196,7 @@ export default function AdminDashboard() {
                   <button
                     key={lead.id}
                     onClick={() => setSelected(lead)}
-                    className={`text-left px-5 py-4 hover:bg-[#F0F9FF] transition-colors ${selected?.id === lead.id ? "bg-[#EBF8FF] border-l-2 border-[#0EA5E9]" : ""}`}
+                    className={`text-left px-5 py-4 hover:bg-[#F0F6FF] transition-colors ${selected?.id === lead.id ? "bg-[#EAF2FE] border-l-2 border-[#2A75D8]" : ""}`}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
                     <div className="grid grid-cols-3 gap-2">
                       <dt className="text-xs font-semibold text-[#888] uppercase tracking-wider col-span-1">Email</dt>
                       <dd className="text-sm text-[#000] col-span-2">
-                        <a href={`mailto:${selected.email}`} className="text-[#0EA5E9] hover:underline">
+                        <a href={`mailto:${selected.email}`} className="text-[#2A75D8] hover:underline">
                           {selected.email}
                         </a>
                       </dd>
@@ -248,7 +248,7 @@ export default function AdminDashboard() {
                       <div className="grid grid-cols-3 gap-2">
                         <dt className="text-xs font-semibold text-[#888] uppercase tracking-wider col-span-1">Phone</dt>
                         <dd className="text-sm text-[#000] col-span-2">
-                          <a href={`tel:${selected.phone}`} className="text-[#0EA5E9] hover:underline">
+                          <a href={`tel:${selected.phone}`} className="text-[#2A75D8] hover:underline">
                             {selected.phone}
                           </a>
                         </dd>
@@ -275,14 +275,14 @@ export default function AdminDashboard() {
                   <div className="mt-6 flex gap-3">
                     <a
                       href={`mailto:${selected.email}?subject=Re: ${encodeURIComponent(selected.subject || "Your Enquiry — BeriCo Research LLP")}`}
-                      className="flex-1 text-center py-2 rounded-lg bg-[#0EA5E9] hover:bg-[#0284C7] text-white text-sm font-semibold transition-colors"
+                      className="flex-1 text-center py-2 rounded-lg bg-[#2A75D8] hover:bg-[#1F5FB8] text-white text-sm font-semibold transition-colors"
                     >
                       Reply via Email
                     </a>
                     {selected.phone && (
                       <a
                         href={`tel:${selected.phone}`}
-                        className="px-4 py-2 rounded-lg border border-[#0EA5E9] text-[#0EA5E9] hover:bg-[#EBF8FF] text-sm font-semibold transition-colors"
+                        className="px-4 py-2 rounded-lg border border-[#2A75D8] text-[#2A75D8] hover:bg-[#EAF2FE] text-sm font-semibold transition-colors"
                       >
                         Call
                       </a>

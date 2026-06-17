@@ -80,12 +80,17 @@ export default function Navbar() {
     <>
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-150 ${
-          scrolled
-            ? "bg-[var(--background)]/95 backdrop-blur-md border-b border-[var(--border)] shadow-sm"
-            : "bg-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50"
       >
+        {/* Background layer: opaque (no backdrop-blur). A frosted/blurred fixed
+            header must re-blur the moving content every frame while scrolling,
+            which causes the stutter. An opaque layer composites once and stays
+            smooth. Only opacity animates for the transparent→solid transition. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[var(--background)] border-b border-[var(--border)] shadow-sm transition-opacity duration-200 ease-out"
+          style={{ opacity: scrolled ? 1 : 0, willChange: "opacity" }}
+        />
         <div className="container-content relative">
           {/* Desktop theme toggle — outside nav grid */}
           <div
