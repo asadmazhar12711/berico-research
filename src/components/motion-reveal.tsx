@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode } from "react";
+import { useRef, useEffect, useState, ReactNode } from "react";
 
 interface MotionRevealProps {
   children: ReactNode;
@@ -11,35 +10,57 @@ interface MotionRevealProps {
   once?: boolean;
 }
 
+/**
+ * CSS-driven reveal on scroll. Avoids Framer Motion's JS animation loop
+ * during scroll, which was causing main-thread stalls when sections entered
+ * view (especially as the hero heading passed the fixed header).
+ */
 export default function MotionReveal({
   children,
-  className,
+  className = "",
   delay = 0,
   direction = "up",
   once = true,
 }: MotionRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once, margin: "-60px" });
+  const [visible, setVisible] = useState(false);
 
-  const initial = {
-    opacity: 0,
-    y: direction === "up" ? 24 : 0,
-    x: direction === "left" ? -24 : direction === "right" ? 24 : 0,
-  };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          if (once) observer.disconnect();
+        } else if (!once) {
+          setVisible(false);
+        }
+      },
+      { rootMargin: "-60px 0px", threshold: 0.08 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [once]);
+
+  const directionClass =
+    direction === "left"
+      ? "reveal-from-left"
+      : direction === "right"
+        ? "reveal-from-right"
+        : direction === "none"
+          ? "reveal-fade"
+          : "reveal-from-up";
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={initial}
-      animate={inView ? { opacity: 1, y: 0, x: 0 } : initial}
-      transition={{
-        duration: 0.7,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
-      className={className}
+      className={`reveal ${directionClass}${visible ? " reveal-visible" : ""}${className ? ` ${className}` : ""}`}
+      style={visible && delay > 0 ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

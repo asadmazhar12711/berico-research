@@ -47,6 +47,15 @@
     color: var(--text-primary);
     font-family: var(--font-inter), system-ui, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-anchor: auto;
+  }
+
+  /* Fixed header on its own compositor layer — avoids repainting page
+     content underneath on every scroll frame. No box-shadow (shadow
+     triggers expensive repaints as content scrolls beneath). */
+  .site-header {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   p,
@@ -105,6 +114,117 @@
 }
 
 @layer utilities {
+  /* ── Scroll performance ── */
+
+  /* Same look as SVG grid (0.035 light / 0.06 dark) — static CSS paint, no
+     full-viewport SVG re-rasterize on every scroll frame under fixed header. */
+  .hero-grid-pattern {
+    opacity: 0.035;
+    background-image:
+      linear-gradient(to right, currentColor 0.5px, transparent 0.5px),
+      linear-gradient(to bottom, currentColor 0.5px, transparent 0.5px);
+    background-size: 80px 80px;
+  }
+
+  .dark .hero-grid-pattern {
+    opacity: 0.06;
+  }
+
+  .page-grid-pattern {
+    opacity: 0.035;
+    background-image:
+      linear-gradient(to right, currentColor 0.5px, transparent 0.5px),
+      linear-gradient(to bottom, currentColor 0.5px, transparent 0.5px);
+    background-size: 60px 60px;
+  }
+
+  .dark .page-grid-pattern {
+    opacity: 0.05;
+  }
+
+  /* One-shot hero entrance — runs once on load, compositor-only props */
+  .hero-intro > * {
+    animation: hero-fade-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .hero-intro > *:nth-child(1) { animation-delay: 0s; }
+  .hero-intro > *:nth-child(2) { animation-delay: 0.1s; }
+  .hero-intro > *:nth-child(3) { animation-delay: 0.2s; }
+  .hero-intro > *:nth-child(4) { animation-delay: 0.3s; }
+
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  /* Scroll cue — CSS infinite loop, not Framer Motion JS loop */
+  .scroll-cue {
+    animation: scroll-cue-fade 0.8s ease 1.2s both;
+  }
+
+  @keyframes scroll-cue-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .scroll-cue-line {
+    animation: scroll-cue-bounce 1.8s ease-in-out infinite;
+  }
+
+  @keyframes scroll-cue-bounce {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, 8px, 0); }
+  }
+
+  /* Scroll-triggered reveals — CSS transitions, one React state flip */
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition:
+      opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-from-left {
+    transform: translate3d(-24px, 0, 0);
+  }
+
+  .reveal-from-right {
+    transform: translate3d(24px, 0, 0);
+  }
+
+  .reveal-fade {
+    transform: none;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .page-hero-intro {
+    animation: hero-fade-up 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-intro > *,
+    .scroll-cue,
+    .scroll-cue-line,
+    .reveal,
+    .page-hero-intro {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }

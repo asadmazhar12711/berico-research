@@ -124,7 +124,7 @@ export default function RootLayout({
           storageKey="BeriCo-theme-v3"
         >
           <Navbar />
-          <main id="main-content" className="mobile-site">{children}</main>
+          <main id="main-content" className="mobile-site pb-28 sm:pb-32 lg:pb-24">{children}</main>
           <Footer />
           <FloatingContactActions />
         </ThemeProvider>

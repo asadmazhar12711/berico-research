@@ -34,7 +34,7 @@ function BrandLogo({ className = "" }: { className?: string }) {
     <Link
       href="/"
       aria-label="BeriCo Research LLP — Home"
-      className={`flex flex-col items-center justify-center gap-1.5 shrink-0 min-w-0 px-1 py-3 lg:px-2 lg:py-2 ${className}`}
+      className={`flex flex-col items-center justify-center gap-1 shrink-0 min-w-0 px-1 py-1 lg:px-2 lg:py-0.5 ${className}`}
     >
       <Image
         src="/logo.png"
@@ -53,15 +53,7 @@ function BrandLogo({ className = "" }: { className?: string }) {
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 0);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -80,17 +72,8 @@ export default function Navbar() {
     <>
       <header
         role="banner"
-        className="fixed top-0 left-0 right-0 z-50"
+        className="site-header fixed top-0 left-0 right-0 z-50 bg-[var(--background)] border-b border-[var(--border)]"
       >
-        {/* Background layer: opaque (no backdrop-blur). A frosted/blurred fixed
-            header must re-blur the moving content every frame while scrolling,
-            which causes the stutter. An opaque layer composites once and stays
-            smooth. Only opacity animates for the transparent→solid transition. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[var(--background)] border-b border-[var(--border)] shadow-sm transition-opacity duration-200 ease-out"
-          style={{ opacity: scrolled ? 1 : 0, willChange: "opacity" }}
-        />
         <div className="container-content relative">
           {/* Desktop theme toggle — outside nav grid */}
           <div
@@ -103,7 +86,7 @@ export default function Navbar() {
           {/* Desktop: logo locked to true center; links in equal side columns */}
           <nav
             aria-label="Main navigation"
-            className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center w-full py-5 xl:py-6 pr-14"
+            className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center w-full py-3 xl:py-3.5 pr-14"
           >
             <ul className="flex items-center justify-end gap-2 xl:gap-3" role="list">
               {LEFT_LINKS.map(({ href, label }) => {
@@ -143,7 +126,7 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile: fixed side slots so theme toggle never clips */}
-          <div className="lg:hidden flex items-center justify-between gap-2 py-5 w-full overflow-hidden">
+          <div className="lg:hidden flex items-center justify-between gap-2 py-3 w-full overflow-hidden">
             <button
               onClick={() => setMobileOpen((o) => !o)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -175,7 +158,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed inset-0 z-40 bg-[var(--background)] flex flex-col pt-[6.5rem] lg:hidden"
+            className="fixed inset-0 z-40 bg-[var(--background)] flex flex-col pt-[7.5rem] lg:hidden"
           >
             <div className="container-content flex flex-col flex-1 py-8">
               <ul className="flex flex-col gap-1" role="list">

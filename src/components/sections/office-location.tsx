@@ -1,6 +1,7 @@
 import MotionReveal from "@/components/motion-reveal";
 import SectionEyebrow from "@/components/section-eyebrow";
-import { MapPin, Phone, Mail, Building2, MessageCircle } from "lucide-react";
+import MapEmbed from "@/components/map-embed";
+import { Phone, Mail, Building2, MessageCircle } from "lucide-react";
 import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
@@ -118,27 +119,12 @@ export default function OfficeLocation() {
 
           {/* Map */}
           <MotionReveal delay={0.2} direction="right">
-            <div className="relative h-[400px] lg:h-[480px] border border-[var(--border)] overflow-hidden">
-              <iframe
-                title="BeriCo Research office location — VentureX, Sector 67, Gurgaon"
-                src={mapSrc}
-                width="100%"
-                height="100%"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-700 w-full h-full"
-                aria-label="Map showing BeriCo Research office at VentureX, Sector 67, Gurgaon"
-              />
-              {/* Overlay label */}
-              <div className="absolute bottom-4 left-4 bg-[var(--surface)]/95 backdrop-blur-sm px-4 py-3 border border-[var(--border)]">
-                <div className="flex items-center gap-2">
-                  <MapPin size={14} strokeWidth={1.5} className="text-[var(--accent)]" />
-                  <span className="font-body text-xs font-medium text-[var(--text-primary)]">
-                    VentureX, Sector-67, Gurgaon
-                  </span>
-                </div>
-              </div>
-            </div>
+            <MapEmbed
+              src={mapSrc}
+              title="BeriCo Research office location — VentureX, Sector 67, Gurgaon"
+              caption="VentureX, Sector-67, Gurgaon"
+              className="h-[400px] lg:h-[480px]"
+            />
           </MotionReveal>
         </div>
       </div>

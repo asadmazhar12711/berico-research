@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import ContactForm from "@/components/contact-form";
 import MotionReveal from "@/components/motion-reveal";
+import MapEmbed from "@/components/map-embed";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import {
   CONTACT_EMAIL,
@@ -117,18 +118,11 @@ export default function ContactPage() {
 
               {/* Map */}
               <MotionReveal delay={0.3} className="mt-12">
-                <div className="relative h-64 border border-[var(--border)] overflow-hidden">
-                  <iframe
-                    title="BeriCo Research office — VentureX, Sector 67, Gurgaon"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.7!2d77.0631!3d28.4089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23d46b3a3d05%3A0x1234567890abcdef!2sVentureX%2C%20Sector%2067%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1686000000000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="grayscale opacity-80 w-full h-full"
-                    aria-label="Map of BeriCo Research office location"
-                  />
-                </div>
+                <MapEmbed
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.7!2d77.0631!3d28.4089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23d46b3a3d05%3A0x1234567890abcdef!2sVentureX%2C%20Sector%2067%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1686000000000!5m2!1sen!2sin"
+                  title="BeriCo Research office — VentureX, Sector 67, Gurgaon"
+                  className="h-64"
+                />
               </MotionReveal>
             </div>
 
