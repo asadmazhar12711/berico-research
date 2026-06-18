@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import MotionReveal from "@/components/motion-reveal";
 import { ShieldCheck } from "lucide-react";
-import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/contact";
+import ContactEmails from "@/components/contact-emails";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -81,12 +81,10 @@ export default function DisclaimerPage() {
                       <>
                         If you have any questions regarding this disclaimer or the nature of our operations,
                         please contact us at{" "}
-                        <a
-                          href={CONTACT_MAILTO}
-                          className="text-[var(--accent)] hover:underline"
-                        >
-                          {CONTACT_EMAIL}
-                        </a>
+                        <ContactEmails
+                          className="inline-flex flex-col gap-0.5 not-italic"
+                          linkClassName="text-[var(--accent)] hover:underline"
+                        />
                         .
                       </>
                     ),

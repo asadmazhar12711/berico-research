@@ -4,8 +4,8 @@ import ContactForm from "@/components/contact-form";
 import MotionReveal from "@/components/motion-reveal";
 import MapEmbed from "@/components/map-embed";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import ContactEmails from "@/components/contact-emails";
 import {
-  CONTACT_EMAIL,
   CONTACT_MAILTO,
   CONTACT_MAPS_URL,
   CONTACT_PHONE_DISPLAY,
@@ -36,8 +36,13 @@ const CONTACT_ITEMS = [
   {
     icon: Mail,
     label: "Email",
-    value: CONTACT_EMAIL,
-    href: CONTACT_MAILTO,
+    value: (
+      <ContactEmails
+        className="flex flex-col gap-1 items-center lg:items-start"
+        linkClassName="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
+      />
+    ),
+    href: undefined,
   },
   {
     icon: MapPin,

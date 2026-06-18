@@ -2,9 +2,8 @@ import MotionReveal from "@/components/motion-reveal";
 import SectionEyebrow from "@/components/section-eyebrow";
 import MapEmbed from "@/components/map-embed";
 import { Phone, Mail, Building2, MessageCircle } from "lucide-react";
+import ContactEmails from "@/components/contact-emails";
 import {
-  CONTACT_EMAIL,
-  CONTACT_MAILTO,
   CONTACT_MAPS_URL,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
@@ -105,12 +104,10 @@ export default function OfficeLocation() {
                     <p className="font-body text-xs uppercase tracking-[0.15em] text-[var(--text-secondary)] font-medium mb-1">
                       Email
                     </p>
-                    <a
-                      href={CONTACT_MAILTO}
-                      className="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
-                    >
-                      {CONTACT_EMAIL}
-                    </a>
+                    <ContactEmails
+                      className="flex flex-col gap-1"
+                      linkClassName="font-body text-sm text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors duration-300"
+                    />
                   </div>
                 </div>
               </div>

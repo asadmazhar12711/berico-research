@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import ContactEmails from "@/components/contact-emails";
 import {
-  CONTACT_EMAIL,
-  CONTACT_MAILTO,
   CONTACT_MAPS_URL,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
@@ -110,12 +109,10 @@ export default function Footer() {
               </li>
               <li className="flex mobile-icon-stack gap-3 w-full">
                 <Mail size={16} strokeWidth={1.5} className="text-[var(--accent)] shrink-0" />
-                <a
-                  href={CONTACT_MAILTO}
-                  className="font-body text-base text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-300 break-all"
-                >
-                  {CONTACT_EMAIL}
-                </a>
+                <ContactEmails
+                  className="flex flex-col gap-1 items-center lg:items-start"
+                  linkClassName="font-body text-base text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-300"
+                />
               </li>
             </ul>
           </div>

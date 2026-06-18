@@ -29,7 +29,7 @@ export default function HeroSection() {
       </div>
 
       {/* Spacer matches fixed navbar height (taller on mobile — logo + tagline) */}
-      <div aria-hidden="true" className="h-[7.5rem] shrink-0 lg:h-[6.75rem]" />
+      <div aria-hidden="true" className="h-[8.5rem] shrink-0 lg:h-[7.5rem]" />
 
       {/* Content centered in the band between header bottom and scroll cue */}
       <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col">
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
             <h1 className="font-heading text-[clamp(2rem,6.5vw,5.5rem)] font-semibold leading-[1.12] tracking-[-0.02em] text-[var(--text-primary)] mb-6 break-words">
               Family Office,{" "}
-              <span className="text-[var(--accent)]">Finance</span> &amp; Consulting
+              <span className="text-[var(--accent)]">Finance</span>{" "}&amp; Consulting
             </h1>
 
             <p className="font-body text-lg md:text-xl text-justify-block text-balance text-[var(--text-secondary)] leading-relaxed max-w-xl mb-10 md:mb-12 font-light">

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FloatingContactActions from "@/components/floating-contact-actions";
+import { CONTACT_EMAILS } from "@/lib/contact";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -95,7 +96,7 @@ export default function RootLayout({
               description:
                 "A Family Office, Finance & Consulting firm based in Gurgaon, Haryana.",
               url: "https://BeriCoresearch.co.in",
-              email: "bericoresearch@gmail.com",
+              email: CONTACT_EMAILS[0],
               telephone: "+91-9650510232",
               address: {
                 "@type": "PostalAddress",
@@ -109,7 +110,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+91-9650510232",
                 contactType: "general",
-                email: "bericoresearch@gmail.com",
+                email: CONTACT_EMAILS[0],
               },
               sameAs: [],
             }),

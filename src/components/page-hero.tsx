@@ -10,7 +10,7 @@ export default function PageHero({ eyebrow, title, subtitle }: PageHeroProps) {
   return (
     <section
       aria-label={`${eyebrow} hero`}
-      className="relative pt-[7.5rem] pb-16 lg:pt-36 lg:pb-28 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden"
+      className="relative pt-[8.5rem] pb-16 lg:pt-36 lg:pb-28 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden"
     >
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden [contain:paint]"
