@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./theme-toggle";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSiteHeaderHeight } from "@/hooks/use-site-header-height";
 
 const LEFT_LINKS = [
   { href: "/", label: "Home" },
@@ -39,9 +40,9 @@ function BrandLogo({ className = "" }: { className?: string }) {
       <Image
         src="/logo.png"
         alt="BeriCo Research LLP"
-        width={320}
-        height={115}
-        className="h-[5.5rem] w-auto max-w-full object-contain lg:h-24 xl:h-28"
+        width={384}
+        height={138}
+        className="h-[clamp(4.25rem,14vh,6.6rem)] w-auto max-w-full object-contain lg:h-[7.2rem] xl:h-[8.4rem]"
         priority
       />
       <span className="font-body text-[9px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.2em] uppercase text-[var(--text-secondary)] font-medium text-center leading-tight max-w-full">
@@ -54,6 +55,8 @@ function BrandLogo({ className = "" }: { className?: string }) {
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useSiteHeaderHeight();
 
   useEffect(() => {
     setMobileOpen(false);
@@ -71,6 +74,7 @@ export default function Navbar() {
   return (
     <>
       <header
+        id="site-header"
         role="banner"
         className="site-header fixed top-0 left-0 right-0 z-50 bg-[var(--background)] border-b border-[var(--border)]"
       >
@@ -158,7 +162,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed inset-0 z-40 bg-[var(--background)] flex flex-col pt-[8.5rem] lg:hidden"
+            className="fixed inset-0 z-40 bg-[var(--background)] flex flex-col pt-[var(--site-header-height,10rem)] lg:hidden"
           >
             <div className="container-content flex flex-col flex-1 py-8">
               <ul className="flex flex-col gap-1" role="list">

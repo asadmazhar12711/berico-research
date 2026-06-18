@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import FloatingContactActions from "@/components/floating-contact-actions";
+import SiteChrome from "@/components/site-chrome";
 import { CONTACT_EMAILS } from "@/lib/contact";
 
 const playfair = Playfair_Display({
@@ -124,10 +122,7 @@ export default function RootLayout({
           enableSystem={false}
           storageKey="BeriCo-theme-v3"
         >
-          <Navbar />
-          <main id="main-content" className="mobile-site pb-28 sm:pb-32 lg:pb-24">{children}</main>
-          <Footer />
-          <FloatingContactActions />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>
